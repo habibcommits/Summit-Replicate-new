@@ -3,9 +3,76 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Input } from "@/components/ui/input";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 import { Menu, Search, Mountain, X } from "lucide-react";
+import { cn } from "@/lib/utils";
 
-const navItems = [
+const expeditionItems = {
+  "8000M Expedition": [
+    { label: "K2 Expedition", href: "/expeditions" },
+    { label: "Nanga Parbat Expedition", href: "/expeditions" },
+    { label: "Gasherbrum I & II", href: "/expeditions" },
+    { label: "Broad Peak Expedition", href: "/expeditions" },
+  ],
+  "7000M Expedition": [
+    { label: "Spantik Expedition", href: "/expeditions" },
+    { label: "Gasherbrum V Expedition", href: "/expeditions" },
+    { label: "Masherbrum Expedition", href: "/expeditions" },
+    { label: "Diran Peak Expedition", href: "/expeditions" },
+    { label: "Rakaposhi Expedition", href: "/expeditions" },
+  ],
+  "6000M": [
+    { label: "Diran Peak Expedition", href: "/expeditions" },
+    { label: "Bondit Peak Expedition", href: "/expeditions" },
+    { label: "Paju Peak Expedition", href: "/expeditions" },
+    { label: "Kolpin Peak Expedition", href: "/expeditions" },
+  ],
+  "Rock Climbing": [
+    { label: "Trango Tower Expedition", href: "/expeditions" },
+    { label: "Latok Ogri Expedition", href: "/expeditions" },
+    { label: "Charakusa Valley Expedition", href: "/expeditions" },
+    { label: "Nangma Valley Expedition", href: "/expeditions" },
+  ],
+};
+
+const trekkingItems = {
+  "Karakoram Range": [
+    { label: "K2 Base Camp Trek", href: "/trekking" },
+    { label: "Biafo & Snow Lake Trek", href: "/trekking" },
+    { label: "K2 BC & Gondogoro la Trek", href: "/trekking" },
+    { label: "Five Base Camp Trek", href: "/trekking" },
+    { label: "Iqbal Top Trek", href: "/trekking" },
+  ],
+  "Himalayan Range": [
+    { label: "Around Nanga Parbat Trek", href: "/trekking" },
+    { label: "Nanga Parbat Rupal Face Trek", href: "/trekking" },
+    { label: "Nanga Parbat Raikot Face Trek", href: "/trekking" },
+    { label: "Nanga Parbat Diamir Face Trek", href: "/trekking" },
+  ],
+  "Hindukush Range": [
+    { label: "Tirich Mir Base Camp", href: "/trekking" },
+    { label: "Darkot Pass Trek", href: "/trekking" },
+    { label: "Chilinji Pass Trek", href: "/trekking" },
+    { label: "Naltar Ishkoman Trek", href: "/trekking" },
+  ],
+};
+
+const aboutItems = [
+  { label: "Mountaineering Rule", href: "/about" },
+  { label: "Mountains List In Pakistan", href: "/about" },
+  { label: "Peak Royalty In Pakistan", href: "/about" },
+  { label: "Term & Conditions", href: "/about" },
+  { label: "Company Info", href: "/about" },
+];
+
+const mobileNavItems = [
   { label: "Home", href: "/" },
   { label: "Expeditions", href: "/expeditions" },
   { label: "Trekking", href: "/trekking" },
@@ -33,19 +100,110 @@ export function Navigation() {
             </div>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-1">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                <Button
-                  variant="ghost"
-                  className={`font-medium ${location === item.href ? "bg-accent text-accent-foreground" : ""}`}
-                  data-testid={`link-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                >
-                  {item.label}
-                </Button>
-              </Link>
-            ))}
-          </nav>
+          <NavigationMenu className="hidden lg:flex">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link href="/" className={cn(navigationMenuTriggerStyle(), location === "/" && "bg-accent text-accent-foreground")} data-testid="link-nav-home">
+                  Home
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(location === "/expeditions" && "bg-accent text-accent-foreground")} data-testid="link-nav-expeditions">
+                  Expedition
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid w-[700px] grid-cols-4 gap-3 p-4">
+                    {Object.entries(expeditionItems).map(([category, items]) => (
+                      <div key={category} className="space-y-2">
+                        <h4 className="font-semibold text-sm text-foreground">{category}</h4>
+                        <ul className="space-y-1">
+                          {items.map((item) => (
+                            <li key={item.label}>
+                              <Link 
+                                href={item.href}
+                                className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                                data-testid={`link-expedition-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                              >
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(location === "/trekking" && "bg-accent text-accent-foreground")} data-testid="link-nav-trekking">
+                  Trekking
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="grid w-[600px] grid-cols-3 gap-3 p-4">
+                    {Object.entries(trekkingItems).map(([category, items]) => (
+                      <div key={category} className="space-y-2">
+                        <h4 className="font-semibold text-sm text-foreground">{category}</h4>
+                        <ul className="space-y-1">
+                          {items.map((item) => (
+                            <li key={item.label}>
+                              <Link 
+                                href={item.href}
+                                className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                                data-testid={`link-trekking-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                              >
+                                {item.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/tours" className={cn(navigationMenuTriggerStyle(), location === "/tours" && "bg-accent text-accent-foreground")} data-testid="link-nav-tours">
+                  Tour
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/about" className={cn(navigationMenuTriggerStyle(), location === "/about" && "bg-accent text-accent-foreground")} data-testid="link-nav-travel-info">
+                  Travel Info
+                </Link>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className={cn(location === "/about" && "bg-accent text-accent-foreground")} data-testid="link-nav-about-us">
+                  About Us
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="w-[200px] p-2">
+                    {aboutItems.map((item) => (
+                      <li key={item.label}>
+                        <Link 
+                          href={item.href}
+                          className="block text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors py-2 px-3"
+                          data-testid={`link-about-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                        >
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <Link href="/contact" className={cn(navigationMenuTriggerStyle(), location === "/contact" && "bg-accent text-accent-foreground")} data-testid="link-nav-contact">
+                  Contact
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
 
           <div className="flex items-center gap-2">
             {searchOpen ? (
@@ -120,7 +278,7 @@ export function Navigation() {
                   </div>
 
                   <nav className="flex flex-col gap-1">
-                    {navItems.map((item) => (
+                    {mobileNavItems.map((item) => (
                       <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}>
                         <Button
                           variant="ghost"
