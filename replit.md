@@ -69,3 +69,10 @@ Preferred communication style: Simple, everyday language.
 - Vite for frontend bundling
 - esbuild for server bundling (production)
 - Replit-specific plugins for development (error overlay, cartographer)
+
+### Vercel Deployment Configuration
+- **Node.js Version**: 20.x (configured in `.nvmrc` and Vercel Project Settings)
+- **Build Command**: `npx vite build`
+- **Output Directory**: `dist/public`
+- **API Functions**: Serverless functions in `/api` directory using `@vercel/node@3.0.0` runtime
+- **Rewrites**: SPA fallback configured for client-side routing

@@ -1,1 +1,3 @@
+# Node.js version for Vercel deployment - requires Node 20.x
+# Also set in Vercel Project Settings > General > Node.js Version
 20
