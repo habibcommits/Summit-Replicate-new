@@ -34,7 +34,7 @@ export function FeaturedTrips() {
     );
   }
 
-  const heroImage = featuredTrips[0]?.imageUrl || "";
+  const heroImage = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80";
 
   return (
     <section className="py-16" data-testid="section-featured-trips">
