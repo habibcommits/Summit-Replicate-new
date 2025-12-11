@@ -1,3 +1,12 @@
+/**
+ * Navigation.tsx - Main Site Navigation Component
+ * 
+ * Responsive navigation header with:
+ * - Desktop: Full mega-menu dropdowns for Expeditions, Trekking, and About sections
+ * - Mobile: Slide-out sheet menu with simplified navigation
+ * - Search functionality and Book Now CTA button
+ */
+
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
@@ -14,6 +23,7 @@ import {
 import { Menu, Search, Mountain, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
+// Expedition menu items organized by peak altitude categories
 const expeditionItems = {
   "8000M Expedition": [
     { label: "K2 Expedition", href: "/expeditions" },

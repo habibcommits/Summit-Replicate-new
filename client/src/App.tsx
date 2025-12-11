@@ -1,9 +1,19 @@
+/**
+ * App.tsx - Main Application Entry Point
+ * 
+ * North Karakoram Adventure Tourism Website
+ * This file configures the React application with routing, state management,
+ * and global UI providers for the adventure tourism platform.
+ */
+
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { FloatingButtons } from "@/components/FloatingButtons";
+
+// Page imports - each represents a main section of the website
 import Home from "@/pages/Home";
 import Expeditions from "@/pages/Expeditions";
 import Trekking from "@/pages/Trekking";
@@ -13,21 +23,38 @@ import Contact from "@/pages/Contact";
 import TripDetail from "@/pages/TripDetail";
 import NotFound from "@/pages/not-found";
 
+/**
+ * Router Component
+ * Defines all application routes using wouter for client-side navigation
+ */
 function Router() {
   return (
     <Switch>
+      {/* Main landing page */}
       <Route path="/" component={Home} />
+      {/* Trip category pages */}
       <Route path="/expeditions" component={Expeditions} />
       <Route path="/trekking" component={Trekking} />
       <Route path="/tours" component={Tours} />
+      {/* Information pages */}
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      {/* Dynamic trip detail page with ID parameter */}
       <Route path="/trip/:id" component={TripDetail} />
+      {/* 404 fallback for unmatched routes */}
       <Route component={NotFound} />
     </Switch>
   );
 }
 
+/**
+ * App Component
+ * Root component that wraps the application with necessary providers:
+ * - QueryClientProvider: TanStack Query for server state management
+ * - TooltipProvider: Global tooltip support for UI components
+ * - Toaster: Toast notifications for user feedback
+ * - FloatingButtons: WhatsApp and scroll-to-top buttons
+ */
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
