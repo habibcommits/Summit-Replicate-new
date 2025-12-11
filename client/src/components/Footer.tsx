@@ -42,7 +42,7 @@ export function Footer() {
                 <Mountain className="w-6 h-6 text-primary-foreground" />
               </div>
               <div className="flex flex-col">
-                <span className="font-heading font-bold text-lg leading-tight">Summit</span>
+                <span className="font-heading font-bold text-lg leading-tight">North</span>
                 <span className="font-heading text-xs text-muted-foreground leading-tight uppercase tracking-wider">
                   Karakoram
                 </span>
@@ -127,7 +127,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                <span className="text-muted-foreground text-sm">info@summitkarakoram.com</span>
+                <span className="text-muted-foreground text-sm">info@northkarakoram.com</span>
               </li>
             </ul>
           </div>
@@ -136,7 +136,7 @@ export function Footer() {
         <div className="border-t border-sidebar-border pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
-              &copy; {currentYear} Summit Karakoram. All rights reserved.
+              &copy; {currentYear} North Karakoram. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

@@ -22,17 +22,17 @@ export function AboutSection() {
           <div>
             <p className="text-primary font-medium mb-2">Welcome to</p>
             <h2 className="font-heading font-bold text-3xl md:text-4xl mb-6">
-              Summit Karakoram
+              North Karakoram
             </h2>
             <p className="text-muted-foreground mb-6 leading-relaxed">
-              Summit Karakoram is an established, licensed outfitter and guide to major
+              North Karakoram is an established, licensed outfitter and guide to major
               mountaineering expeditions in the Karakoram & Himalaya Range. Since its
-              commencement, Summit Karakoram has provided support for successful attempts
+              commencement, North Karakoram has provided support for successful attempts
               on K2, Nanga Parbat, Gasherbrum 1, Gasherbrum 2, Broad Peak, and numerous
               other peaks.
             </p>
             <p className="text-muted-foreground mb-8 leading-relaxed">
-              In addition to mountaineering support, Summit Karakoram provides trekking
+              In addition to mountaineering support, North Karakoram provides trekking
               and hiking support, enabling our clients to view some of the most
               spectacular mountain scenery in the world. We also offer cultural and
               heritage tours to historic sites across Pakistan.

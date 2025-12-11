@@ -50,7 +50,7 @@ export default function About() {
             <div>
               <p className="text-white/80 text-lg mb-2">Get to Know Us</p>
               <h1 className="font-heading font-bold text-4xl md:text-5xl text-white">
-                About Summit Karakoram
+                About North Karakoram
               </h1>
             </div>
           </div>

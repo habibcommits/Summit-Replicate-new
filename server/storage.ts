@@ -29,7 +29,7 @@ const sampleTripsData: Trip[] = [
     price: 12500,
     category: "Expedition",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/majestic_mountain_pe_743f6593.jpg",
+    imageUrl: "/attached_assets/stock_images/k2_mountain_peak_sno_175a1326.jpg",
     rating: 5,
     featured: true,
     difficulty: "Extreme",
@@ -45,7 +45,7 @@ const sampleTripsData: Trip[] = [
     price: 11900,
     category: "Expedition",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/majestic_mountain_pe_34e27685.jpg",
+    imageUrl: "/attached_assets/stock_images/nanga_parbat_mountai_ef29d039.jpg",
     rating: 5,
     featured: true,
     difficulty: "Extreme",
@@ -61,7 +61,7 @@ const sampleTripsData: Trip[] = [
     price: 9800,
     category: "Expedition",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/mountain_base_camp_t_930df7d7.jpg",
+    imageUrl: "/attached_assets/stock_images/k2_mountain_peak_sno_77eee35d.jpg",
     rating: 5,
     featured: true,
     difficulty: "Extreme",
@@ -77,7 +77,7 @@ const sampleTripsData: Trip[] = [
     price: 7500,
     category: "Expedition",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/majestic_mountain_pe_37c42122.jpg",
+    imageUrl: "/attached_assets/stock_images/k2_mountain_peak_sno_c6e62836.jpg",
     rating: 5,
     featured: false,
     difficulty: "Advanced",
@@ -86,14 +86,14 @@ const sampleTripsData: Trip[] = [
   {
     id: "5",
     title: "Skardu Valley Blossom Tour",
-    description: "Summit Karakoram offers the most beautiful city Skardu with cherry blossoms in spring. Experience the magical pink valley with comfortable accommodations.",
-    shortDescription: "Summit Karakoram offering the most beautiful city Skardu and...",
+    description: "North Karakoram offers the most beautiful city Skardu with cherry blossoms in spring. Experience the magical pink valley with comfortable accommodations.",
+    shortDescription: "North Karakoram offering the most beautiful city Skardu and...",
     destination: "Skardu",
     duration: "10 Days - 9 Nights",
     price: 1650,
     category: "Tour",
     season: "Spring",
-    imageUrl: "/attached_assets/stock_images/cherry_blossom_sprin_c38c5d7d.jpg",
+    imageUrl: "/attached_assets/stock_images/mountain_valley_gree_f9edc35a.jpg",
     rating: 5,
     featured: true,
     difficulty: "Easy",
@@ -103,13 +103,13 @@ const sampleTripsData: Trip[] = [
     id: "6",
     title: "Hunza Panorama Tour",
     description: "Explore the stunning Hunza Valley with its ancient forts, cherry blossoms, and views of Rakaposhi. A perfect cultural and scenic adventure.",
-    shortDescription: "Fairy Meadows is located in the Raikot valley Gilgit Baltistan. The trek...",
+    shortDescription: "Hunza Valley with ancient forts and cherry blossoms. The perfect...",
     destination: "Hunza Valley",
     duration: "13 Days - 12 Nights",
     price: 1460,
     category: "Tour",
     season: "Spring",
-    imageUrl: "/attached_assets/stock_images/mountain_trekking_ex_54bf77cb.jpg",
+    imageUrl: "/attached_assets/stock_images/mountain_valley_gree_587a0e9b.jpg",
     rating: 5,
     featured: false,
     difficulty: "Easy",
@@ -125,7 +125,7 @@ const sampleTripsData: Trip[] = [
     price: 1440,
     category: "Tour",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/summer_green_meadow__8f865b59.jpg",
+    imageUrl: "/attached_assets/stock_images/pakistan_mountain_va_c849d0c5.jpg",
     rating: 4.8,
     featured: false,
     difficulty: "Moderate",
@@ -141,7 +141,7 @@ const sampleTripsData: Trip[] = [
     price: 1250,
     category: "Tour",
     season: "Autumn",
-    imageUrl: "/attached_assets/stock_images/ancient_culture_tour_93a1f0b6.jpg",
+    imageUrl: "/attached_assets/stock_images/ancient_buddhist_tem_194f5ddb.jpg",
     rating: 4.9,
     featured: false,
     difficulty: "Easy",
@@ -157,7 +157,7 @@ const sampleTripsData: Trip[] = [
     price: 1050,
     category: "Tour",
     season: "Autumn",
-    imageUrl: "/attached_assets/stock_images/autumn_golden_foliag_727c6f87.jpg",
+    imageUrl: "/attached_assets/stock_images/pakistan_mountain_va_42ede9d1.jpg",
     rating: 4.9,
     featured: false,
     difficulty: "Easy",
@@ -173,7 +173,7 @@ const sampleTripsData: Trip[] = [
     price: 3200,
     category: "Trekking",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/mountain_trekking_ex_3477c925.jpg",
+    imageUrl: "/attached_assets/stock_images/adventure_trekking_g_ebb73f85.jpg",
     rating: 5,
     featured: true,
     difficulty: "Advanced",
@@ -189,7 +189,7 @@ const sampleTripsData: Trip[] = [
     price: 890,
     category: "Trekking",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/mountain_trekking_ex_40f18eca.jpg",
+    imageUrl: "/attached_assets/stock_images/adventure_trekking_g_ae9918f3.jpg",
     rating: 4.9,
     featured: false,
     difficulty: "Moderate",
@@ -205,7 +205,7 @@ const sampleTripsData: Trip[] = [
     price: 2100,
     category: "Tour",
     season: "Summer",
-    imageUrl: "/attached_assets/stock_images/mountain_base_camp_t_3e7d1acc.jpg",
+    imageUrl: "/attached_assets/stock_images/pakistan_mountain_va_33d46532.jpg",
     rating: 4.8,
     featured: false,
     difficulty: "Moderate",
@@ -307,14 +307,26 @@ export class MemStorage implements IStorage {
 
   async createTrip(insertTrip: InsertTrip): Promise<Trip> {
     const id = randomUUID();
-    const trip: Trip = { ...insertTrip, id };
+    const trip: Trip = { 
+      ...insertTrip, 
+      id,
+      rating: insertTrip.rating ?? null,
+      featured: insertTrip.featured ?? null,
+      difficulty: insertTrip.difficulty ?? null,
+      maxGroupSize: insertTrip.maxGroupSize ?? null,
+    };
     this.trips.set(id, trip);
     return trip;
   }
 
   async createContactInquiry(insertContact: InsertContact): Promise<Contact> {
     const id = randomUUID();
-    const contact: Contact = { ...insertContact, id };
+    const contact: Contact = { 
+      ...insertContact, 
+      id,
+      phone: insertContact.phone ?? null,
+      tripInterest: insertContact.tripInterest ?? null,
+    };
     this.contactInquiries.set(id, contact);
     return contact;
   }
