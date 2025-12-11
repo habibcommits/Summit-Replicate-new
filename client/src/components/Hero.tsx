@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     subtitle: "Plan Your Next Trip with",
-    title: "Summit Karakoram",
+    title: "North Karakoram",
     description: "An Excellent Opportunity to Travel and Experience Adventure",
   },
   {
