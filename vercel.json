@@ -1,9 +1,17 @@
 {
-  "buildCommand": "npm run build",
+  "buildCommand": "npx vite build",
   "outputDirectory": "dist/public",
   "framework": null,
+  "functions": {
+    "api/**/*.ts": {
+      "runtime": "@vercel/node@3.0.0"
+    }
+  },
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/api/trips/featured", "destination": "/api/trips/featured" },
+    { "source": "/api/trips/:id", "destination": "/api/trips/[id]" },
+    { "source": "/api/trips", "destination": "/api/trips/index" },
+    { "source": "/api/:path*", "destination": "/api/:path*" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
