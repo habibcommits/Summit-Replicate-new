@@ -1,0 +1,115 @@
+Skip to content
+habibcommits' projects
+habibcommits' projects
+
+Hobby
+
+northkarakoram
+
+HyRp4D51f
+
+
+Find…
+F
+
+Deployment Details
+Build Failed
+Found invalid Node.js Version: "20.x". Please set Node.js Version to 18.x in your Project Settings to use Node.js 18.
+
+Created
+habibcommits Avatar
+habibcommits
+3m ago
+Status
+Error
+Latest
+Duration
+32s
+2m ago
+Environment
+Production
+Domains
+northkarakoram-54cova5b1-habibcommits-projects.vercel.app
+Source
+main
+c12c947
+Add comments to HTML and component files for clarity
+
+Deployment Settings
+3 Recommendations
+Build Logs
+33s
+1 line selected
+Find in logs
+CtrlF
+02:30:14.099 
+Running build in Washington, D.C., USA (East) – iad1
+02:30:14.099 
+Build machine configuration: 2 cores, 8 GB
+02:30:14.109 
+Cloning github.com/habibcommits/northkarakoram (Branch: main, Commit: c12c947)
+02:30:14.110 
+Skipping build cache, deployment was triggered without cache.
+02:30:14.775 
+Cloning completed: 666.000ms
+02:30:15.168 
+Running "vercel build"
+02:30:15.580 
+Vercel CLI 49.1.2
+02:30:16.476 
+> Installing Builder: @vercel/node@3.0.0
+02:30:28.102 
+Installing dependencies...
+02:30:33.323 
+npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+02:30:33.387 
+npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+02:30:38.397 
+02:30:38.398 
+added 572 packages in 10s
+02:30:38.399 
+02:30:38.399 
+72 packages are looking for funding
+02:30:38.399 
+  run `npm fund` for details
+02:30:38.985 
+vite v5.4.20 building for production...
+02:30:39.033 
+transforming...
+Deployment Summary
+Deployment Checks
+Assigning Custom Domains
+Runtime Logs
+
+View and debug runtime logs & errors
+
+Observability
+
+Monitor app health & performance
+
+Speed Insights
+
+Not Enabled
+Performance metrics from real users
+
+Web Analytics
+
+Not Enabled
+Analyze visitors & traffic in real-time
+
+Home
+Docs
+Knowledge Base
+Academy
+Help
+Contact
+All systems normal.
+
+Select a display theme:
+
+system
+
+light
+
+dark
+northkarakoram – Deployment Overview – Vercel
