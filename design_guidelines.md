@@ -1,7 +1,7 @@
-# Summit Karakoram-Inspired Adventure Tourism Website - Design Guidelines
+# North Karakoram-Inspired Adventure Tourism Website - Design Guidelines
 
 ## Design Approach
-**Reference-Based Approach**: Drawing inspiration from premium adventure tourism platforms (Airbnb Experiences, REI Adventures, Intrepid Travel) combined with the rugged, adventure-focused aesthetic of Summit Karakoram. The design emphasizes dramatic mountain imagery, clear expedition information hierarchy, and trust-building elements essential for high-value adventure bookings.
+**Reference-Based Approach**: Drawing inspiration from premium adventure tourism platforms (Airbnb Experiences, REI Adventures, Intrepid Travel) combined with the rugged, adventure-focused aesthetic of North Karakoram. The design emphasizes dramatic mountain imagery, clear expedition information hierarchy, and trust-building elements essential for high-value adventure bookings.
 
 ## Typography System
 
@@ -112,7 +112,7 @@
 2. **Featured Expeditions** - 3-card grid showcasing premium trips
 3. **Season Selection** - 4-card grid for seasonal filtering
 4. **Trip Catalog** - 6-9 trip cards in 3-column grid with search/filter above
-5. **About Summit Karakoram** - Two-column company introduction with imagery
+5. **About North Karakoram** - Two-column company introduction with imagery
 6. **Expedition Highlights** - Carousel or grid of popular/affordable tours
 7. **Affiliations** - Logo grid of certifications and partners
 8. **Newsletter/Contact CTA** - Full-width section encouraging booking inquiries
