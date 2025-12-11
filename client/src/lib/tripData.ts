@@ -11,6 +11,14 @@ import winterImage from "@assets/stock_images/winter_snow_mountain_7f1a8755.jpg"
 import baseCampImage1 from "@assets/stock_images/mountain_base_camp_t_930df7d7.jpg";
 import baseCampImage2 from "@assets/stock_images/mountain_base_camp_t_3e7d1acc.jpg";
 import cultureImage from "@assets/stock_images/ancient_culture_tour_93a1f0b6.jpg";
+import expeditionImage1 from "@assets/stock_images/mountain_expedition__228548ef.jpg";
+import expeditionImage2 from "@assets/stock_images/mountain_expedition__b33a227e.jpg";
+import expeditionImage3 from "@assets/stock_images/mountain_expedition__494acab3.jpg";
+import valleyImage1 from "@assets/stock_images/pakistan_mountain_va_c849d0c5.jpg";
+import valleyImage2 from "@assets/stock_images/pakistan_mountain_va_42ede9d1.jpg";
+import valleyImage3 from "@assets/stock_images/pakistan_mountain_va_33d46532.jpg";
+import adventureImage1 from "@assets/stock_images/adventure_trekking_g_ebb73f85.jpg";
+import adventureImage2 from "@assets/stock_images/adventure_trekking_g_ae9918f3.jpg";
 
 export const heroImages = [heroImage1, heroImage2, heroImage3];
 
@@ -34,6 +42,17 @@ export const tripImageMap: Record<string, string> = {
   "10": trekkingImage2,
   "11": trekkingImage3,
   "12": baseCampImage2,
+};
+
+export const pageImages = {
+  expedition: expeditionImage1,
+  expedition2: expeditionImage2,
+  expedition3: expeditionImage3,
+  valley: valleyImage1,
+  valley2: valleyImage2,
+  valley3: valleyImage3,
+  adventure: adventureImage1,
+  adventure2: adventureImage2,
 };
 
 export const affiliations = [

@@ -1,22 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { TripCatalog } from "@/components/TripCatalog";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/Footer";
-import { Skeleton } from "@/components/ui/skeleton";
-import type { Trip } from "@shared/schema";
+import { pageImages } from "@/lib/tripData";
 
 export default function Expeditions() {
-  const { data: heroTrip } = useQuery<Trip[]>({
-    queryKey: ["/api/trips/featured"],
-    queryFn: async () => {
-      const response = await fetch("/api/trips?category=Expedition");
-      if (!response.ok) throw new Error("Failed to fetch");
-      return response.json();
-    },
-  });
-
-  const heroImage = heroTrip?.[0]?.imageUrl || "/attached_assets/stock_images/majestic_mountain_pe_743f6593.jpg";
+  const heroImage = pageImages.expedition;
 
   return (
     <div className="min-h-screen flex flex-col">

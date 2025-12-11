@@ -1,21 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { TripCatalog } from "@/components/TripCatalog";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/Footer";
-import type { Trip } from "@shared/schema";
+import { pageImages } from "@/lib/tripData";
 
 export default function Tours() {
-  const { data: heroTrip } = useQuery<Trip[]>({
-    queryKey: ["/api/trips", "Tour", "hero"],
-    queryFn: async () => {
-      const response = await fetch("/api/trips?category=Tour");
-      if (!response.ok) throw new Error("Failed to fetch");
-      return response.json();
-    },
-  });
-
-  const heroImage = heroTrip?.[0]?.imageUrl || "/attached_assets/stock_images/summer_green_meadow__8f865b59.jpg";
+  const heroImage = pageImages.valley;
 
   return (
     <div className="min-h-screen flex flex-col">

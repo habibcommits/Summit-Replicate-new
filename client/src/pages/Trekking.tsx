@@ -1,21 +1,11 @@
-import { useQuery } from "@tanstack/react-query";
 import { Navigation } from "@/components/Navigation";
 import { TripCatalog } from "@/components/TripCatalog";
 import { Newsletter } from "@/components/Newsletter";
 import { Footer } from "@/components/Footer";
-import type { Trip } from "@shared/schema";
+import { pageImages } from "@/lib/tripData";
 
 export default function Trekking() {
-  const { data: heroTrip } = useQuery<Trip[]>({
-    queryKey: ["/api/trips", "Trekking", "hero"],
-    queryFn: async () => {
-      const response = await fetch("/api/trips?category=Trekking");
-      if (!response.ok) throw new Error("Failed to fetch");
-      return response.json();
-    },
-  });
-
-  const heroImage = heroTrip?.[0]?.imageUrl || "/attached_assets/stock_images/mountain_trekking_ex_54bf77cb.jpg";
+  const heroImage = pageImages.adventure;
 
   return (
     <div className="min-h-screen flex flex-col">
