@@ -1,8 +1,8 @@
-# Summit Karakoram - Adventure Tourism Website
+# North Karakoram - Adventure Tourism Website
 
 ## Overview
 
-Summit Karakoram is an adventure tourism website for a Pakistani mountaineering and expedition company. The platform showcases mountain expeditions (K2, Nanga Parbat, etc.), trekking adventures, and cultural tours in the Karakoram and Himalaya regions. Users can browse trips by category, season, or destination, view detailed trip information, and submit contact inquiries.
+North Karakoram is an adventure tourism website for a Pakistani mountaineering and expedition company. The platform showcases mountain expeditions (K2, Nanga Parbat, etc.), trekking adventures, and cultural tours in the Karakoram and Himalaya regions. Users can browse trips by category, season, or destination, view detailed trip information, and submit contact inquiries.
 
 ## User Preferences
 
@@ -48,7 +48,7 @@ Preferred communication style: Simple, everyday language.
 
 ### Design System
 - **Typography**: Jost (headings) and Noto Sans (body) via Google Fonts
-- **Color Scheme**: Orange primary (#FF681A), neutral backgrounds
+- **Color Scheme**: Blue primary (#007BFF), neutral backgrounds
 - **Components**: Card-based layouts for trip displays, responsive grid system
 
 ## External Dependencies
