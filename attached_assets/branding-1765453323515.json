@@ -1,0 +1,107 @@
+{
+  "colorScheme": "light",
+  "fonts": [
+    {
+      "family": "Noto Sans",
+      "role": "body"
+    },
+    {
+      "family": "Jost",
+      "role": "heading"
+    }
+  ],
+  "colors": {
+    "primary": "#69727D",
+    "accent": "#FF681A",
+    "background": "#FFFFFF",
+    "textPrimary": "#000000",
+    "link": "#FF681A"
+  },
+  "typography": {
+    "fontFamilies": {
+      "primary": "Noto Sans",
+      "heading": "Jost"
+    },
+    "fontStacks": {
+      "heading": [
+        "Jost",
+        "sans-serif"
+      ],
+      "body": [
+        "Noto Sans",
+        "sans-serif"
+      ],
+      "paragraph": [
+        "Jost",
+        "sans-serif"
+      ]
+    },
+    "fontSizes": {
+      "h1": "54px",
+      "h2": "15px",
+      "body": "24px"
+    }
+  },
+  "spacing": {
+    "baseUnit": 4,
+    "borderRadius": "5px"
+  },
+  "components": {
+    "input": {
+      "borderColor": "#CCCCCC",
+      "borderRadius": "5px"
+    },
+    "buttonPrimary": {
+      "background": "#FF681A",
+      "textColor": "#FFFFFF",
+      "borderRadius": "4px",
+      "shadow": "none"
+    },
+    "buttonSecondary": {
+      "background": "#0F5C96",
+      "textColor": "#FFFFFF",
+      "borderRadius": "10px",
+      "shadow": "none"
+    }
+  },
+  "images": {
+    "logo": "https://summitkarakoram.com/wp-content/uploads/2024/06/Summit-Karakouram-Logo-2.png",
+    "favicon": "https://summitkarakoram.com/wp-content/uploads/2024/07/cropped-Screenshot-2024-07-12-at-1.10.19-PM-1-32x32.png",
+    "ogImage": null
+  },
+  "__framework_hints": [
+    "WordPress 6.6.4"
+  ],
+  "__llm_logo_reasoning": {
+    "selectedIndex": 1,
+    "reasoning": "Logo #1 matches the brand name 'Summit Karakoram' and is located in the header, linking to the homepage, making it the primary brand logo.",
+    "confidence": 0.9
+  },
+  "__llm_button_reasoning": {
+    "primary": {
+      "index": 0,
+      "text": "Search",
+      "reasoning": "Button #0 has a vibrant orange background (#FF681A) which is a strong brand color and features action-oriented text ('Search'). This makes it the primary call-to-action button."
+    },
+    "secondary": {
+      "index": 1,
+      "text": "View More",
+      "reasoning": "Button #1 has a blue background (#0F5C96) which is distinct from the primary button's color. It also features action-oriented text ('View More'), making it suitable as the secondary button."
+    },
+    "confidence": 0.95
+  },
+  "personality": {
+    "tone": "modern",
+    "energy": "medium",
+    "targetAudience": "adventure seekers and travelers"
+  },
+  "designSystem": {
+    "framework": "unknown",
+    "componentLibrary": null
+  },
+  "confidence": {
+    "buttons": 0.95,
+    "colors": 0.9,
+    "overall": 0.925
+  }
+}
