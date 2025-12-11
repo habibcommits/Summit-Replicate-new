@@ -1,0 +1,54 @@
+02:22:08.243 Running build in Washington, D.C., USA (East) – iad1
+02:22:08.244 Build machine configuration: 2 cores, 8 GB
+02:22:08.254 Cloning github.com/habibcommits/northkarakoram (Branch: main, Commit: c12c947)
+02:22:08.254 Skipping build cache, deployment was triggered without cache.
+02:22:08.918 Cloning completed: 664.000ms
+02:22:09.324 Running "vercel build"
+02:22:09.794 Vercel CLI 49.1.2
+02:22:10.637 > Installing Builder: @vercel/node@3.0.0
+02:22:22.488 Installing dependencies...
+02:22:27.878 npm warn deprecated @esbuild-kit/esm-loader@2.6.5: Merged into tsx: https://tsx.is
+02:22:27.896 npm warn deprecated @esbuild-kit/core-utils@3.3.2: Merged into tsx: https://tsx.is
+02:22:33.368 
+02:22:33.368 added 572 packages in 11s
+02:22:33.368 
+02:22:33.369 72 packages are looking for funding
+02:22:33.369   run `npm fund` for details
+02:22:33.972 [36mvite v5.4.20 [32mbuilding for production...[36m[39m
+02:22:34.021 transforming...
+02:22:35.373 
+02:22:35.374 A PostCSS plugin did not pass the `from` option to `postcss.parse`. This may cause imported assets to be incorrectly transformed. If you've recently added a PostCSS plugin that raised this warning, please contact the package author to fix the issue.
+02:22:40.675 [32m✓[39m 1870 modules transformed.
+02:22:41.133 rendering chunks...
+02:22:41.179 computing gzip size...
+02:22:41.296 [2m../dist/public/[22m[32mindex.html                                         [39m[1m[2m  1.46 kB[22m[1m[22m[2m │ gzip:   0.72 kB[22m
+02:22:41.296 [2m../dist/public/[22m[2massets/[22m[32mmountain_expedition__228548ef-DVwYFNxs.jpg  [39m[1m[2m112.81 kB[22m[1m[22m
+02:22:41.297 [2m../dist/public/[22m[2massets/[22m[32mmountain_expedition__494acab3-Bk2_68DP.jpg  [39m[1m[2m126.43 kB[22m[1m[22m
+02:22:41.297 [2m../dist/public/[22m[2massets/[22m[32mmountain_trekking_ex_3477c925-DgTmVNc1.jpg  [39m[1m[2m151.01 kB[22m[1m[22m
+02:22:41.297 [2m../dist/public/[22m[2massets/[22m[32mmountain_trekking_ex_40f18eca-eA-6uWV_.jpg  [39m[1m[2m172.20 kB[22m[1m[22m
+02:22:41.297 [2m../dist/public/[22m[2massets/[22m[32mmountain_base_camp_t_930df7d7-BW9y-Quy.jpg  [39m[1m[2m207.54 kB[22m[1m[22m
+02:22:41.297 [2m../dist/public/[22m[2massets/[22m[32mwinter_snow_mountain_7f1a8755-nOWzQJcu.jpg  [39m[1m[2m260.32 kB[22m[1m[22m
+02:22:41.298 [2m../dist/public/[22m[2massets/[22m[32mmountain_base_camp_t_3e7d1acc-sub5tmmK.jpg  [39m[1m[2m288.56 kB[22m[1m[22m
+02:22:41.298 [2m../dist/public/[22m[2massets/[22m[32mpakistan_mountain_va_42ede9d1-C__p_XwJ.jpg  [39m[1m[2m296.74 kB[22m[1m[22m
+02:22:41.298 [2m../dist/public/[22m[2massets/[22m[32mmajestic_mountain_pe_743f6593-kzSN5ke-.jpg  [39m[1m[2m307.97 kB[22m[1m[22m
+02:22:41.298 [2m../dist/public/[22m[2massets/[22m[32mmajestic_mountain_pe_34e27685-DdHfqxif.jpg  [39m[1m[2m310.53 kB[22m[1m[22m
+02:22:41.298 [2m../dist/public/[22m[2massets/[22m[32mmajestic_mountain_pe_37c42122-CgYL-eJw.jpg  [39m[1m[2m315.13 kB[22m[1m[22m
+02:22:41.298 [2m../dist/public/[22m[2massets/[22m[32msummer_green_meadow__8f865b59-C9wrtJQB.jpg  [39m[1m[2m362.28 kB[22m[1m[22m
+02:22:41.299 [2m../dist/public/[22m[2massets/[22m[32mancient_culture_tour_93a1f0b6-198z7rEa.jpg  [39m[1m[2m390.88 kB[22m[1m[22m
+02:22:41.299 [2m../dist/public/[22m[2massets/[22m[32madventure_trekking_g_ebb73f85-BncMFuUk.jpg  [39m[1m[2m417.84 kB[22m[1m[22m
+02:22:41.299 [2m../dist/public/[22m[2massets/[22m[32mmountain_expedition__b33a227e-CCmyNz4z.jpg  [39m[1m[2m460.82 kB[22m[1m[22m
+02:22:41.299 [2m../dist/public/[22m[2massets/[22m[32madventure_trekking_g_ae9918f3-BVFVSarq.jpg  [39m[1m[2m464.04 kB[22m[1m[22m
+02:22:41.299 [2m../dist/public/[22m[2massets/[22m[32mcherry_blossom_sprin_c38c5d7d-Br3jcFPN.jpg  [39m[1m[2m492.30 kB[22m[1m[22m
+02:22:41.299 [2m../dist/public/[22m[2massets/[22m[32mautumn_golden_foliag_727c6f87-md7XyJ6E.jpg  [39m[1m[2m494.34 kB[22m[1m[22m
+02:22:41.299 [2m../dist/public/[22m[2massets/[22m[32mpakistan_mountain_va_c849d0c5-BJ62tRLZ.jpg  [39m[1m[2m513.22 kB[22m[1m[22m
+02:22:41.300 [2m../dist/public/[22m[2massets/[22m[32mpakistan_mountain_va_33d46532-lf35TO2r.jpg  [39m[1m[2m549.37 kB[22m[1m[22m
+02:22:41.300 [2m../dist/public/[22m[2massets/[22m[35mindex-qm_c6t1g.css                          [39m[1m[2m 97.68 kB[22m[1m[22m[2m │ gzip:  14.66 kB[22m
+02:22:41.300 [2m../dist/public/[22m[2massets/[22m[36mindex-BWQR_e2g.js                           [39m[1m[33m533.30 kB[39m[22m[2m │ gzip: 160.76 kB[22m
+02:22:41.301 [33m
+02:22:41.301 (!) Some chunks are larger than 500 kB after minification. Consider:
+02:22:41.301 - Using dynamic import() to code-split the application
+02:22:41.301 - Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+02:22:41.301 - Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+02:22:41.301 [32m✓ built in 7.31s[39m
+02:22:41.390 Error: Found invalid Node.js Version: "20.x". Please set Node.js Version to 18.x in your Project Settings to use Node.js 18.
+02:22:41.390 Learn More: http://vercel.link/node-version
