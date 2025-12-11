@@ -1,7 +1,20 @@
+/**
+ * Footer.tsx - Site Footer Component
+ * 
+ * Comprehensive footer with:
+ * - Company branding and description
+ * - Quick navigation links
+ * - Popular destinations list
+ * - Contact information
+ * - Social media links
+ * - Copyright and legal links
+ */
+
 import { Link } from "wouter";
 import { Mountain, Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 
+// Navigation quick links for footer
 const quickLinks = [
   { label: "Home", href: "/" },
   { label: "Expeditions", href: "/expeditions" },

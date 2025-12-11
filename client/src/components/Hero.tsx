@@ -1,9 +1,18 @@
+/**
+ * Hero.tsx - Homepage Hero Section Component
+ * 
+ * Features an auto-rotating image carousel with animated text overlays.
+ * Displays stunning mountain imagery with call-to-action buttons for
+ * exploring expeditions and contacting the company.
+ */
+
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { heroImages } from "@/lib/tripData";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+// Slide content configuration - each slide has subtitle, title, and description
 const slides = [
   {
     subtitle: "Plan Your Next Trip with",

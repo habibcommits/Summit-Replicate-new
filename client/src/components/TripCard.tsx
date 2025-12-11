@@ -1,3 +1,14 @@
+/**
+ * TripCard.tsx - Reusable Trip Display Card Component
+ * 
+ * Renders trip information in three variants:
+ * - default: Standard card with full details
+ * - compact: Smaller card for grid layouts
+ * - featured: Enhanced card with gradient overlay for featured trips
+ * 
+ * Displays trip image, title, destination, duration, price, and rating
+ */
+
 import { Link } from "wouter";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -5,6 +16,7 @@ import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Star } from "lucide-react";
 import type { Trip } from "@shared/schema";
 
+// Props interface for TripCard component variants
 interface TripCardProps {
   trip: Trip;
   variant?: "default" | "compact" | "featured";
