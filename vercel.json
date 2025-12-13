@@ -2,11 +2,6 @@
   "buildCommand": "npx vite build",
   "outputDirectory": "dist/public",
   "framework": null,
-  "functions": {
-    "api/**/*.ts": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "rewrites": [
     { "source": "/api/trips/featured", "destination": "/api/trips/featured" },
     { "source": "/api/trips/:id", "destination": "/api/trips/[id]" },
