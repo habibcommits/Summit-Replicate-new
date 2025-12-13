@@ -20,8 +20,9 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Menu, Search, Mountain, X } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import logoImage from "@assets/Untitled_design_1765623825631.png";
 
 // Expedition menu items organized by peak altitude categories
 const expeditionItems = {
@@ -100,14 +101,8 @@ export function Navigation() {
     <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between gap-4">
-          <Link href="/" className="flex items-center gap-2" data-testid="link-home-logo">
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-md bg-primary">
-              <Mountain className="w-6 h-6 text-primary-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-heading font-bold text-lg leading-tight">North</span>
-              <span className="font-heading text-xs text-muted-foreground leading-tight uppercase tracking-wider">Karakoram</span>
-            </div>
+          <Link href="/" className="flex items-center" data-testid="link-home-logo">
+            <img src={logoImage} alt="North Karakoram" className="h-12 w-auto" />
           </Link>
 
           <NavigationMenu className="hidden lg:flex">
@@ -267,14 +262,8 @@ export function Navigation() {
               </SheetTrigger>
               <SheetContent side="right" className="w-[300px]">
                 <div className="flex flex-col gap-4 mt-8">
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary">
-                      <Mountain className="w-6 h-6 text-primary-foreground" />
-                    </div>
-                    <div className="flex flex-col">
-                      <span className="font-heading font-bold text-lg leading-tight">North</span>
-                      <span className="font-heading text-xs text-muted-foreground leading-tight uppercase tracking-wider">Karakoram</span>
-                    </div>
+                  <div className="flex items-center mb-4">
+                    <img src={logoImage} alt="North Karakoram" className="h-12 w-auto" />
                   </div>
 
                   <div className="relative">
