@@ -11,8 +11,9 @@
  */
 
 import { Link } from "wouter";
-import { Mountain, Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
+import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
+import logoImage from "@assets/Untitled_design_1765623825631.png";
 
 // Navigation quick links for footer
 const quickLinks = [
@@ -50,16 +51,8 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <div>
-            <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="flex items-center justify-center w-10 h-10 rounded-md bg-primary">
-                <Mountain className="w-6 h-6 text-primary-foreground" />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-heading font-bold text-lg leading-tight">North</span>
-                <span className="font-heading text-xs text-muted-foreground leading-tight uppercase tracking-wider">
-                  Karakoram
-                </span>
-              </div>
+            <Link href="/" className="flex items-center mb-4">
+              <img src={logoImage} alt="North Karakoram" className="h-14 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Licensed outfitter and guide to major mountaineering expeditions in the
