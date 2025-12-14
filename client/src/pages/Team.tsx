@@ -17,7 +17,7 @@ const teamMembers = [
     name: "Muhammad Ali",
     role: "Founder & CEO",
     image: ceoImage,
-    expertise: ["Strategic Planning", "Expedition Leadership", "Business Development"],
+    expertise: ["Strategic Planning", "Expedition Leadership", "Business Development", "Mountain Tourism", "Team Building"],
     description: "With over 15 years of mountaineering experience, Muhammad Ali founded North Karakoram with a vision to share the majestic beauty of Pakistan's peaks with adventurers worldwide. His deep knowledge of the Karakoram range and passion for sustainable tourism drives our company's mission."
   },
   {
@@ -25,7 +25,7 @@ const teamMembers = [
     name: "Mohsin Ali",
     role: "Operation Manager",
     image: operationManagerImage,
-    expertise: ["Logistics Management", "Team Coordination", "Safety Protocols"],
+    expertise: ["Logistics Management", "Team Coordination", "Safety Protocols", "Route Planning", "Crisis Management"],
     description: "Mohsin ensures seamless operations across all expeditions and treks. His meticulous attention to detail and expertise in coordinating complex logistics guarantees that every adventure runs smoothly from start to finish."
   },
   {
@@ -33,7 +33,7 @@ const teamMembers = [
     name: "Ibrahim Khalil",
     role: "Operation Manager & Tour Consultant",
     image: tourConsultantImage,
-    expertise: ["Tour Planning", "Client Relations", "Custom Itineraries"],
+    expertise: ["Tour Planning", "Client Relations", "Custom Itineraries", "Customer Service", "Travel Consulting"],
     description: "Ibrahim combines operational excellence with personalized tour consulting. He works closely with clients to design bespoke adventures that match their skill levels, preferences, and dreams of conquering Pakistan's legendary peaks."
   },
   {
@@ -41,23 +41,23 @@ const teamMembers = [
     name: "Ghulam Abbas",
     role: "Logistics Specialist",
     image: logisticsImage,
-    expertise: ["Equipment Management", "Supply Chain", "Base Camp Operations"],
+    expertise: ["Equipment Management", "Supply Chain", "Base Camp Operations", "Inventory Control", "Vendor Relations"],
     description: "Ghulam is the backbone of our expedition logistics. His expertise in managing equipment, supplies, and base camp operations ensures that every expedition is properly equipped and supported throughout the journey."
   },
   {
     id: 5,
-    name: "Field Manager",
-    role: "Field Manager & Tour Guide",
+    name: "Muhammad Ibrahim",
+    role: "Head Cook",
     image: fieldManagerImage,
-    expertise: ["Mountain Navigation", "Emergency Response", "Group Leadership"],
-    description: "Our experienced Field Manager leads teams through challenging terrains with confidence and care. With extensive knowledge of local routes and conditions, he ensures safe and memorable experiences for all adventurers."
+    expertise: ["High Altitude Cooking", "Nutrition Planning", "Team Catering", "Camp Kitchen Management"],
+    description: "Muhammad Ibrahim is our expert Head Cook who ensures all expedition members are well-nourished with delicious, nutritious meals even at the highest altitudes. His expertise in high-altitude cooking and meal planning keeps teams energized throughout their adventures."
   },
   {
     id: 6,
     name: "Murtaza Ali",
     role: "Field Manager & Tour Guide",
     image: tourGuideImage,
-    expertise: ["High Altitude Trekking", "Cultural Interpretation", "Client Safety"],
+    expertise: ["High Altitude Trekking", "Cultural Interpretation", "Client Safety", "Mountain Navigation", "First Aid"],
     description: "Murtaza brings energy and expertise to every expedition. His passion for the mountains and ability to connect with diverse groups makes him an invaluable guide for both challenging climbs and cultural explorations."
   }
 ];
