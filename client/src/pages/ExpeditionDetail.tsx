@@ -1,0 +1,358 @@
+import { useParams, Link } from "wouter";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { Newsletter } from "@/components/Newsletter";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  MapPin,
+  Clock,
+  Mountain,
+  Calendar,
+  Users,
+  ArrowLeft,
+  Check,
+  X,
+  AlertTriangle,
+  ChevronRight,
+} from "lucide-react";
+import { getExpeditionBySlug, expeditions } from "@/lib/expeditionData";
+
+export default function ExpeditionDetail() {
+  const { slug } = useParams<{ slug: string }>();
+  const expedition = getExpeditionBySlug(slug || "");
+
+  if (!expedition) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <Navigation />
+        <main className="flex-1 flex items-center justify-center">
+          <div className="text-center px-4">
+            <h1 className="font-heading font-bold text-3xl mb-4">Expedition Not Found</h1>
+            <p className="text-muted-foreground mb-6">
+              The expedition you're looking for doesn't exist.
+            </p>
+            <Link href="/expeditions">
+              <Button data-testid="button-back-expeditions">
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                View All Expeditions
+              </Button>
+            </Link>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  const otherExpeditions = expeditions.filter((e) => e.id !== expedition.id).slice(0, 3);
+
+  return (
+    <div className="min-h-screen flex flex-col">
+      <Navigation />
+      <main className="flex-1">
+        <section className="relative h-[50vh] min-h-[400px]">
+          <img
+            src={expedition.image}
+            alt={expedition.name}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+          <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+            <div className="container mx-auto">
+              <Link
+                href="/expeditions"
+                className="inline-flex items-center text-white/70 mb-4 hover:text-white transition-colors"
+                data-testid="link-back-expeditions"
+              >
+                <ArrowLeft className="w-4 h-4 mr-2" />
+                Back to Expeditions
+              </Link>
+              <div className="flex flex-wrap items-center gap-2 mb-3">
+                <Badge variant="secondary" className="bg-primary text-primary-foreground">
+                  {expedition.altitude}
+                </Badge>
+                <Badge variant="secondary">{expedition.difficulty}</Badge>
+                <Badge variant="outline" className="border-white/30 text-white">
+                  {expedition.bestSeason}
+                </Badge>
+              </div>
+              <h1
+                className="font-heading font-bold text-3xl md:text-4xl lg:text-5xl text-white mb-4"
+                data-testid="text-expedition-name"
+              >
+                {expedition.name}
+              </h1>
+              <div className="flex flex-wrap items-center gap-4 text-white/80">
+                <div className="flex items-center gap-1">
+                  <MapPin className="w-4 h-4" />
+                  <span>{expedition.location}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Clock className="w-4 h-4" />
+                  <span>{expedition.duration}</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <Users className="w-4 h-4" />
+                  <span>{expedition.groupSize}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-8 md:py-12">
+          <div className="container mx-auto px-4">
+            <div className="grid lg:grid-cols-3 gap-6 md:gap-8">
+              <div className="lg:col-span-2 space-y-6 md:space-y-8">
+                <div>
+                  <h2 className="font-heading font-bold text-2xl mb-3">Overview</h2>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {expedition.overview}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <Mountain className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <p className="text-muted-foreground text-xs mb-1">Altitude</p>
+                      <p className="font-heading font-semibold text-sm">{expedition.altitude}</p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <Clock className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <p className="text-muted-foreground text-xs mb-1">Duration</p>
+                      <p className="font-heading font-semibold text-sm">{expedition.duration}</p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <Calendar className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <p className="text-muted-foreground text-xs mb-1">Best Season</p>
+                      <p className="font-heading font-semibold text-sm">{expedition.bestSeason}</p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-4 text-center">
+                      <Users className="w-6 h-6 text-primary mx-auto mb-2" />
+                      <p className="text-muted-foreground text-xs mb-1">Group Size</p>
+                      <p className="font-heading font-semibold text-sm">{expedition.groupSize}</p>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div>
+                  <h2 className="font-heading font-bold text-2xl mb-3">Highlights</h2>
+                  <ul className="space-y-2">
+                    {expedition.highlights.map((highlight, index) => (
+                      <li key={index} className="flex items-start gap-3">
+                        <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <Check className="w-3 h-3 text-primary" />
+                        </div>
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <Tabs defaultValue="timeline" className="w-full">
+                  <TabsList className="w-full grid grid-cols-3">
+                    <TabsTrigger value="timeline" data-testid="tab-timeline">
+                      Timeline
+                    </TabsTrigger>
+                    <TabsTrigger value="services" data-testid="tab-services">
+                      Services
+                    </TabsTrigger>
+                    <TabsTrigger value="requirements" data-testid="tab-requirements">
+                      Requirements
+                    </TabsTrigger>
+                  </TabsList>
+                  <TabsContent value="timeline" className="mt-4">
+                    <div className="space-y-3">
+                      {expedition.timeline.map((item, index) => (
+                        <Card key={index}>
+                          <CardContent className="p-4">
+                            <div className="flex items-start gap-4">
+                              <div className="bg-primary text-primary-foreground text-xs font-medium px-2 py-1 rounded-md whitespace-nowrap">
+                                {item.day}
+                              </div>
+                              <div>
+                                <h4 className="font-heading font-semibold mb-1">{item.title}</h4>
+                                <p className="text-muted-foreground text-sm">{item.description}</p>
+                              </div>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      ))}
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="services" className="mt-4">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <Card>
+                        <CardHeader className="pb-3">
+                          <CardTitle className="flex items-center gap-2 text-lg">
+                            <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center">
+                              <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
+                            </div>
+                            Services Included
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          <ul className="space-y-2">
+                            {expedition.servicesIncluded.map((service, index) => (
+                              <li key={index} className="flex items-start gap-2 text-sm">
+                                <Check className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                                <span>{service}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardHeader className="pb-3">
+                          <CardTitle className="flex items-center gap-2 text-lg">
+                            <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center">
+                              <X className="w-4 h-4 text-red-600 dark:text-red-400" />
+                            </div>
+                            Not Included
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          <ul className="space-y-2">
+                            {expedition.servicesNotIncluded.map((service, index) => (
+                              <li key={index} className="flex items-start gap-2 text-sm">
+                                <X className="w-4 h-4 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                                <span>{service}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="requirements" className="mt-4">
+                    <Card>
+                      <CardHeader className="pb-3">
+                        <CardTitle className="flex items-center gap-2 text-lg">
+                          <AlertTriangle className="w-5 h-5 text-secondary" />
+                          Climber Requirements
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent className="pt-0">
+                        <ul className="space-y-2">
+                          {expedition.requirements.map((req, index) => (
+                            <li key={index} className="flex items-start gap-2">
+                              <ChevronRight className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                              <span>{req}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                </Tabs>
+              </div>
+
+              <div>
+                <Card className="sticky top-20">
+                  <CardContent className="p-5">
+                    <div className="mb-5">
+                      <p className="text-muted-foreground text-sm mb-1">Starting from</p>
+                      <div className="flex items-baseline gap-2">
+                        <span className="font-heading font-bold text-3xl text-primary">
+                          ${expedition.price.toLocaleString()}
+                        </span>
+                        <span className="text-muted-foreground">USD</span>
+                      </div>
+                    </div>
+
+                    <div className="space-y-2 mb-5">
+                      <div className="flex items-center justify-between py-2 border-b border-border">
+                        <span className="text-muted-foreground text-sm">Duration</span>
+                        <span className="font-medium text-sm">{expedition.duration}</span>
+                      </div>
+                      <div className="flex items-center justify-between py-2 border-b border-border">
+                        <span className="text-muted-foreground text-sm">Difficulty</span>
+                        <span className="font-medium text-sm">{expedition.difficulty}</span>
+                      </div>
+                      <div className="flex items-center justify-between py-2 border-b border-border">
+                        <span className="text-muted-foreground text-sm">Location</span>
+                        <span className="font-medium text-sm">{expedition.location}</span>
+                      </div>
+                      <div className="flex items-center justify-between py-2 border-b border-border">
+                        <span className="text-muted-foreground text-sm">Season</span>
+                        <span className="font-medium text-sm">{expedition.bestSeason}</span>
+                      </div>
+                    </div>
+
+                    <Link href="/contact">
+                      <Button className="w-full" size="lg" data-testid="button-book-expedition">
+                        Book This Expedition
+                      </Button>
+                    </Link>
+
+                    <p className="text-muted-foreground text-xs text-center mt-3">
+                      Custom dates available. Contact us for group discounts.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {otherExpeditions.length > 0 && (
+          <section className="py-8 md:py-12 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <h2 className="font-heading font-bold text-2xl md:text-3xl mb-6 text-center">
+                Other Expeditions
+              </h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {otherExpeditions.map((exp) => (
+                  <Link
+                    key={exp.id}
+                    href={`/expedition/${exp.slug}`}
+                    data-testid={`card-expedition-${exp.id}`}
+                  >
+                    <Card className="overflow-hidden hover-elevate cursor-pointer h-full">
+                      <div className="relative h-40">
+                        <img
+                          src={exp.image}
+                          alt={exp.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute bottom-3 left-3">
+                          <Badge variant="secondary" className="bg-primary text-primary-foreground text-xs">
+                            {exp.altitude}
+                          </Badge>
+                        </div>
+                      </div>
+                      <CardContent className="p-4">
+                        <h3 className="font-heading font-semibold mb-1">{exp.name}</h3>
+                        <p className="text-muted-foreground text-sm mb-2">{exp.location}</p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-muted-foreground">{exp.duration}</span>
+                          <span className="font-heading font-bold text-primary">
+                            ${exp.price.toLocaleString()}
+                          </span>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
+
+        <Newsletter />
+      </main>
+      <Footer />
+    </div>
+  );
+}

@@ -22,18 +22,18 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Menu, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/ThemeToggle";
 import logoImage from "@assets/Untitled_design_1765623825631.png";
 
-// Expedition menu items organized by peak altitude categories
 const expeditionItems = {
   "8000M Expedition": [
-    { label: "K2 Expedition", href: "/expeditions" },
-    { label: "Nanga Parbat Expedition", href: "/expeditions" },
-    { label: "Gasherbrum I & II", href: "/expeditions" },
-    { label: "Broad Peak Expedition", href: "/expeditions" },
+    { label: "K2 Expedition", href: "/expedition/k2-expedition" },
+    { label: "Nanga Parbat Expedition", href: "/expedition/nanga-parbat-expedition" },
+    { label: "Gasherbrum I & II", href: "/expedition/gasherbrum-expedition" },
+    { label: "Broad Peak Expedition", href: "/expedition/broad-peak-expedition" },
   ],
   "7000M Expedition": [
-    { label: "Spantik Expedition", href: "/expeditions" },
+    { label: "Spantik Expedition", href: "/expedition/spantik-expedition" },
     { label: "Gasherbrum V Expedition", href: "/expeditions" },
     { label: "Masherbrum Expedition", href: "/expeditions" },
     { label: "Diran Peak Expedition", href: "/expeditions" },
@@ -244,6 +244,8 @@ export function Navigation() {
                 <Search className="w-5 h-5" />
               </Button>
             )}
+
+            <ThemeToggle />
 
             <Link href="/contact">
               <Button className="hidden sm:flex" data-testid="button-book-now-header">

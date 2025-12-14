@@ -91,9 +91,9 @@ export function TripCatalog({
 
   if (isLoading) {
     return (
-      <section className="py-16" data-testid="section-trip-catalog">
+      <section className="py-10" data-testid="section-trip-catalog">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
+          <div className="text-center mb-6">
             <Skeleton className="h-6 w-32 mx-auto mb-2" />
             <Skeleton className="h-10 w-64 mx-auto" />
           </div>
@@ -111,9 +111,9 @@ export function TripCatalog({
   }
 
   return (
-    <section className="py-16" data-testid="section-trip-catalog">
+    <section className="py-10" data-testid="section-trip-catalog">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <p className="text-primary font-medium mb-2">{subtitle}</p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl">{title}</h2>
         </div>
