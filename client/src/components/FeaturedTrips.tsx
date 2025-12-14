@@ -17,7 +17,7 @@ export function FeaturedTrips() {
 
   if (isLoading) {
     return (
-      <section className="py-16" data-testid="section-featured-trips">
+      <section className="py-10" data-testid="section-featured-trips">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="lg:w-2/3">
@@ -37,7 +37,7 @@ export function FeaturedTrips() {
   const heroImage = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80";
 
   return (
-    <section className="py-16" data-testid="section-featured-trips">
+    <section className="py-10" data-testid="section-featured-trips">
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-2/3">

@@ -17,6 +17,7 @@ import { ContentProtection } from "@/components/ContentProtection";
 // Page imports - each represents a main section of the website
 import Home from "@/pages/Home";
 import Expeditions from "@/pages/Expeditions";
+import ExpeditionDetail from "@/pages/ExpeditionDetail";
 import Trekking from "@/pages/Trekking";
 import Tours from "@/pages/Tours";
 import About from "@/pages/About";
@@ -36,6 +37,7 @@ function Router() {
       <Route path="/" component={Home} />
       {/* Trip category pages */}
       <Route path="/expeditions" component={Expeditions} />
+      <Route path="/expedition/:slug" component={ExpeditionDetail} />
       <Route path="/trekking" component={Trekking} />
       <Route path="/tours" component={Tours} />
       {/* Information pages */}

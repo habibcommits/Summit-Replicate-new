@@ -11,9 +11,9 @@ interface SeasonFilterProps {
 
 export function SeasonFilter({ selectedSeason, onSelectSeason }: SeasonFilterProps) {
   return (
-    <section className="py-16 bg-muted/30" data-testid="section-seasons">
+    <section className="py-10 bg-muted/30" data-testid="section-seasons">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6">
           <p className="text-primary font-medium mb-2">Find a Trip by</p>
           <h2 className="font-heading font-bold text-3xl md:text-4xl">Season</h2>
         </div>
