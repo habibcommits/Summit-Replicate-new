@@ -14,7 +14,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Clock, Star } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import type { Trip } from "@shared/schema";
+
+const getWhatsAppLink = (tripTitle: string) => {
+  const message = encodeURIComponent(`I'm interested in ${tripTitle}. Can I get more information?`);
+  return `https://wa.me/923330228111?text=${message}`;
+};
 
 // Props interface for TripCard component variants
 interface TripCardProps {
@@ -61,11 +67,17 @@ export function TripCard({ trip, variant = "default" }: TripCardProps) {
           <p className="text-muted-foreground text-sm line-clamp-2 mb-3">
             {trip.shortDescription}
           </p>
-          <Link href={`/trip/${trip.id}`}>
-            <Button className="w-full" data-testid={`button-book-trip-${trip.id}`}>
-              Book Now
+          <a
+            href={getWhatsAppLink(trip.title)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Button className="w-full gap-2" data-testid={`button-quote-trip-${trip.id}`}>
+              <SiWhatsapp className="w-4 h-4" />
+              Get Instant Quote
             </Button>
-          </Link>
+          </a>
         </CardContent>
       </Card>
     );
@@ -112,17 +124,17 @@ export function TripCard({ trip, variant = "default" }: TripCardProps) {
           <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
             {trip.shortDescription}
           </p>
-          <div className="flex items-center justify-between gap-4">
-            <div>
-              <span className="text-2xl font-heading font-bold text-primary">
-                ${trip.price.toLocaleString()}
-              </span>
-              <span className="text-muted-foreground text-sm"> / person</span>
-            </div>
-            <Link href={`/trip/${trip.id}`}>
-              <Button data-testid={`button-book-featured-${trip.id}`}>Book Now</Button>
-            </Link>
-          </div>
+          <a
+            href={getWhatsAppLink(trip.title)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block"
+          >
+            <Button className="w-full gap-2" data-testid={`button-quote-featured-${trip.id}`}>
+              <SiWhatsapp className="w-4 h-4" />
+              Get Instant Quote
+            </Button>
+          </a>
         </CardContent>
       </Card>
     );
@@ -154,22 +166,21 @@ export function TripCard({ trip, variant = "default" }: TripCardProps) {
         <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
           {trip.shortDescription}
         </p>
-        <div className="flex items-center justify-between gap-4 mb-4">
-          <div className="flex items-center gap-1 text-muted-foreground text-sm">
-            <Clock className="w-4 h-4" />
-            <span>{trip.duration}</span>
-          </div>
-          <div>
-            <span className="text-xl font-heading font-bold text-primary">
-              ${trip.price.toLocaleString()}
-            </span>
-          </div>
+        <div className="flex items-center gap-1 text-muted-foreground text-sm mb-4">
+          <Clock className="w-4 h-4" />
+          <span>{trip.duration}</span>
         </div>
-        <Link href={`/trip/${trip.id}`}>
-          <Button className="w-full" data-testid={`button-view-trip-${trip.id}`}>
-            Book Now
+        <a
+          href={getWhatsAppLink(trip.title)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block"
+        >
+          <Button className="w-full gap-2" data-testid={`button-quote-trip-${trip.id}`}>
+            <SiWhatsapp className="w-4 h-4" />
+            Get Instant Quote
           </Button>
-        </Link>
+        </a>
       </CardContent>
     </Card>
   );

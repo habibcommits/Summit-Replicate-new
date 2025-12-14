@@ -76,6 +76,7 @@ const trekkingItems = {
 };
 
 const aboutItems = [
+  { label: "Our Team", href: "/team" },
   { label: "Mountaineering Rule", href: "/about" },
   { label: "Mountains List In Pakistan", href: "/about" },
   { label: "Peak Royalty In Pakistan", href: "/about" },
@@ -88,6 +89,7 @@ const mobileNavItems = [
   { label: "Expeditions", href: "/expeditions" },
   { label: "Trekking", href: "/trekking" },
   { label: "Tours", href: "/tours" },
+  { label: "Our Team", href: "/team" },
   { label: "About Us", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
