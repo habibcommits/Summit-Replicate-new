@@ -21,7 +21,7 @@ export function ContentProtection() {
 
     const handleContextMenu = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
+      if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'A' || target.closest('a') || target.closest('footer')) {
         return;
       }
       e.preventDefault();
