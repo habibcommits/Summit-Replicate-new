@@ -12,6 +12,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { FloatingButtons } from "@/components/FloatingButtons";
+import { ContentProtection } from "@/components/ContentProtection";
 
 // Page imports - each represents a main section of the website
 import Home from "@/pages/Home";
@@ -19,6 +20,7 @@ import Expeditions from "@/pages/Expeditions";
 import Trekking from "@/pages/Trekking";
 import Tours from "@/pages/Tours";
 import About from "@/pages/About";
+import Team from "@/pages/Team";
 import Contact from "@/pages/Contact";
 import TripDetail from "@/pages/TripDetail";
 import NotFound from "@/pages/not-found";
@@ -38,6 +40,7 @@ function Router() {
       <Route path="/tours" component={Tours} />
       {/* Information pages */}
       <Route path="/about" component={About} />
+      <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />
       {/* Dynamic trip detail page with ID parameter */}
       <Route path="/trip/:id" component={TripDetail} />
@@ -62,6 +65,7 @@ function App() {
         <Toaster />
         <Router />
         <FloatingButtons />
+        <ContentProtection />
       </TooltipProvider>
     </QueryClientProvider>
   );

@@ -11,8 +11,8 @@
  */
 
 import { Link } from "wouter";
-import { Mail, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { SiWhatsapp, SiYoutube, SiTiktok, SiInstagram, SiFacebook } from "react-icons/si";
 import logoImage from "@assets/Untitled_design_1765623825631.png";
 
 // Navigation quick links for footer
@@ -58,30 +58,47 @@ export function Footer() {
               Licensed outfitter and guide to major mountaineering expeditions in the
               Karakoram & Himalaya Range since 1998.
             </p>
-            <div className="flex gap-3">
+            <div className="flex gap-3 flex-wrap">
               <a
-                href="#"
+                href="https://www.facebook.com/share/1CtcRSQ4Yw/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-md bg-muted flex items-center justify-center hover-elevate"
                 data-testid="link-social-facebook"
               >
-                <Facebook className="w-4 h-4" />
+                <SiFacebook className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/northkarakoram?igsh=MWlseHgycWNybWx2MA%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-md bg-muted flex items-center justify-center hover-elevate"
                 data-testid="link-social-instagram"
               >
-                <Instagram className="w-4 h-4" />
+                <SiInstagram className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://youtube.com/@northkarakoram?si=vYCoNIBV9C3J1flk"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-md bg-muted flex items-center justify-center hover-elevate"
                 data-testid="link-social-youtube"
               >
-                <Youtube className="w-4 h-4" />
+                <SiYoutube className="w-4 h-4" />
               </a>
               <a
-                href="#"
+                href="https://www.tiktok.com/@northkarakoram?_r=1&_t=ZS-92DeQDrmQvi"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-md bg-muted flex items-center justify-center hover-elevate"
+                data-testid="link-social-tiktok"
+              >
+                <SiTiktok className="w-4 h-4" />
+              </a>
+              <a
+                href="https://wa.me/923330228111"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-md bg-muted flex items-center justify-center hover-elevate"
                 data-testid="link-social-whatsapp"
               >
