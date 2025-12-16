@@ -19,7 +19,7 @@ export function FloatingButtons() {
   };
 
   const openWhatsApp = () => {
-    window.open("https://wa.me/923330228111?text=I'm%20interested%20in%20your%20services.%20Can%20I%20get%20more%20information?", "_blank");
+    window.open("https://wa.me/923555718293?text=I'm%20interested%20in%20your%20services.%20Can%20I%20get%20more%20information?", "_blank");
   };
 
   return (

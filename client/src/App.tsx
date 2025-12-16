@@ -13,6 +13,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { FloatingButtons } from "@/components/FloatingButtons";
 import { ContentProtection } from "@/components/ContentProtection";
+import { WelcomePopup } from "@/components/WelcomePopup";
 
 // Page imports - each represents a main section of the website
 import Home from "@/pages/Home";
@@ -68,6 +69,7 @@ function App() {
         <Router />
         <FloatingButtons />
         <ContentProtection />
+        <WelcomePopup />
       </TooltipProvider>
     </QueryClientProvider>
   );
