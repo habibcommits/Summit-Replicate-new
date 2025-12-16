@@ -100,208 +100,213 @@ export function Navigation() {
   const [searchOpen, setSearchOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-      <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 w-full border-b border-border">
+      <div className="flex">
+        <div className="bg-white dark:bg-gray-900 flex items-center px-4 py-2">
           <Link href="/" className="flex items-center" data-testid="link-home-logo">
-            <img src={logoImage} alt="North Karakoram" className="h-12 w-auto" />
+            <img src={logoImage} alt="North Karakoram" className="h-16 w-auto" />
           </Link>
+        </div>
+        <div className="flex-1 bg-primary">
+          <div className="container mx-auto px-4">
+            <div className="flex h-20 items-center justify-between gap-4">
+              <NavigationMenu className="hidden lg:flex">
+                <NavigationMenuList>
+                  <NavigationMenuItem>
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/" && "bg-primary/80")} data-testid="link-nav-home">
+                      Home
+                    </Link>
+                  </NavigationMenuItem>
 
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="/" className={cn(navigationMenuTriggerStyle(), location === "/" && "bg-accent text-accent-foreground")} data-testid="link-nav-home">
-                  Home
-                </Link>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn(location === "/expeditions" && "bg-accent text-accent-foreground")} data-testid="link-nav-expeditions">
-                  Expedition
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[700px] grid-cols-4 gap-3 p-4">
-                    {Object.entries(expeditionItems).map(([category, items]) => (
-                      <div key={category} className="space-y-2">
-                        <h4 className="font-semibold text-sm text-foreground">{category}</h4>
-                        <ul className="space-y-1">
-                          {items.map((item) => (
-                            <li key={item.label}>
-                              <Link 
-                                href={item.href}
-                                className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
-                                data-testid={`link-expedition-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                              >
-                                {item.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className={cn("text-primary-foreground hover:text-primary-foreground hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/expeditions" && "bg-primary/80")} data-testid="link-nav-expeditions">
+                      Expedition
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[700px] grid-cols-4 gap-3 p-4">
+                        {Object.entries(expeditionItems).map(([category, items]) => (
+                          <div key={category} className="space-y-2">
+                            <h4 className="font-semibold text-sm text-foreground">{category}</h4>
+                            <ul className="space-y-1">
+                              {items.map((item) => (
+                                <li key={item.label}>
+                                  <Link 
+                                    href={item.href}
+                                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                                    data-testid={`link-expedition-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                                  >
+                                    {item.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn(location === "/trekking" && "bg-accent text-accent-foreground")} data-testid="link-nav-trekking">
-                  Trekking
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[600px] grid-cols-3 gap-3 p-4">
-                    {Object.entries(trekkingItems).map(([category, items]) => (
-                      <div key={category} className="space-y-2">
-                        <h4 className="font-semibold text-sm text-foreground">{category}</h4>
-                        <ul className="space-y-1">
-                          {items.map((item) => (
-                            <li key={item.label}>
-                              <Link 
-                                href={item.href}
-                                className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
-                                data-testid={`link-trekking-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                              >
-                                {item.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className={cn("text-primary-foreground hover:text-primary-foreground hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/trekking" && "bg-primary/80")} data-testid="link-nav-trekking">
+                      Trekking
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <div className="grid w-[600px] grid-cols-3 gap-3 p-4">
+                        {Object.entries(trekkingItems).map(([category, items]) => (
+                          <div key={category} className="space-y-2">
+                            <h4 className="font-semibold text-sm text-foreground">{category}</h4>
+                            <ul className="space-y-1">
+                              {items.map((item) => (
+                                <li key={item.label}>
+                                  <Link 
+                                    href={item.href}
+                                    className="block text-sm text-muted-foreground hover:text-foreground transition-colors py-1"
+                                    data-testid={`link-trekking-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                                  >
+                                    {item.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/tours" className={cn(navigationMenuTriggerStyle(), location === "/tours" && "bg-accent text-accent-foreground")} data-testid="link-nav-tours">
-                  Tour
-                </Link>
-              </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/tours" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/tours" && "bg-primary/80")} data-testid="link-nav-tours">
+                      Tour
+                    </Link>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/about" className={cn(navigationMenuTriggerStyle(), location === "/about" && "bg-accent text-accent-foreground")} data-testid="link-nav-travel-info">
-                  Travel Info
-                </Link>
-              </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Link href="/about" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-travel-info">
+                      Travel Info
+                    </Link>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={cn(location === "/about" && "bg-accent text-accent-foreground")} data-testid="link-nav-about-us">
-                  About Us
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="w-[200px] p-2">
-                    {aboutItems.map((item) => (
-                      <li key={item.label}>
-                        <Link 
-                          href={item.href}
-                          className="block text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors py-2 px-3"
-                          data-testid={`link-about-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                          {item.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <NavigationMenuTrigger className={cn("text-primary-foreground hover:text-primary-foreground hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-about-us">
+                      About Us
+                    </NavigationMenuTrigger>
+                    <NavigationMenuContent>
+                      <ul className="w-[200px] p-2">
+                        {aboutItems.map((item) => (
+                          <li key={item.label}>
+                            <Link 
+                              href={item.href}
+                              className="block text-sm text-muted-foreground hover:text-foreground hover:bg-accent rounded-md transition-colors py-2 px-3"
+                              data-testid={`link-about-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                            >
+                              {item.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </NavigationMenuContent>
+                  </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/contact" className={cn(navigationMenuTriggerStyle(), location === "/contact" && "bg-accent text-accent-foreground")} data-testid="link-nav-contact">
-                  Contact
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                  <NavigationMenuItem>
+                    <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/contact" && "bg-primary/80")} data-testid="link-nav-contact">
+                      Contact
+                    </Link>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
 
-          <div className="flex items-center gap-2">
-            {searchOpen ? (
-              <div className="relative hidden sm:flex items-center">
-                <Input
-                  type="search"
-                  placeholder="Search trips..."
-                  className="w-48 pr-8"
-                  data-testid="input-search"
-                  autoFocus
-                  onBlur={() => setSearchOpen(false)}
-                />
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="absolute right-0"
-                  onClick={() => setSearchOpen(false)}
-                  data-testid="button-close-search"
-                >
-                  <X className="w-4 h-4" />
-                </Button>
-              </div>
-            ) : (
-              <Button
-                size="icon"
-                variant="ghost"
-                className="hidden sm:flex"
-                onClick={() => setSearchOpen(true)}
-                data-testid="button-open-search"
-              >
-                <Search className="w-5 h-5" />
-              </Button>
-            )}
-
-            <ThemeToggle />
-
-            <Link href="/contact">
-              <Button className="hidden sm:flex" data-testid="button-book-now-header">
-                Book Now
-              </Button>
-            </Link>
-
-            <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
-              <SheetTrigger asChild>
-                <Button
-                  size="icon"
-                  variant="ghost"
-                  className="lg:hidden"
-                  data-testid="button-mobile-menu"
-                >
-                  <Menu className="w-5 h-5" />
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="w-[300px]">
-                <div className="flex flex-col gap-4 mt-8">
-                  <div className="flex items-center mb-4">
-                    <img src={logoImage} alt="North Karakoram" className="h-12 w-auto" />
-                  </div>
-
-                  <div className="relative">
-                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <div className="flex items-center gap-2">
+                {searchOpen ? (
+                  <div className="relative hidden sm:flex items-center">
                     <Input
                       type="search"
                       placeholder="Search trips..."
-                      className="pl-10"
-                      data-testid="input-mobile-search"
+                      className="w-48 pr-8 bg-white/20 text-primary-foreground placeholder:text-primary-foreground/70 border-primary-foreground/30"
+                      data-testid="input-search"
+                      autoFocus
+                      onBlur={() => setSearchOpen(false)}
                     />
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      className="absolute right-0 text-primary-foreground hover:bg-primary/80"
+                      onClick={() => setSearchOpen(false)}
+                      data-testid="button-close-search"
+                    >
+                      <X className="w-4 h-4" />
+                    </Button>
                   </div>
+                ) : (
+                  <Button
+                    size="icon"
+                    variant="ghost"
+                    className="hidden sm:flex text-primary-foreground hover:bg-primary/80"
+                    onClick={() => setSearchOpen(true)}
+                    data-testid="button-open-search"
+                  >
+                    <Search className="w-5 h-5" />
+                  </Button>
+                )}
 
-                  <nav className="flex flex-col gap-1">
-                    {mobileNavItems.map((item) => (
-                      <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}>
-                        <Button
-                          variant="ghost"
-                          className={`w-full justify-start font-medium ${location === item.href ? "bg-accent text-accent-foreground" : ""}`}
-                          data-testid={`link-mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
-                        >
-                          {item.label}
+                <ThemeToggle />
+
+                <Link href="/contact">
+                  <Button className="hidden sm:flex bg-white text-primary hover:bg-white/90" data-testid="button-book-now-header">
+                    Book Now
+                  </Button>
+                </Link>
+
+                <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                  <SheetTrigger asChild>
+                    <Button
+                      size="icon"
+                      variant="ghost"
+                      className="lg:hidden text-primary-foreground hover:bg-primary/80"
+                      data-testid="button-mobile-menu"
+                    >
+                      <Menu className="w-5 h-5" />
+                    </Button>
+                  </SheetTrigger>
+                  <SheetContent side="right" className="w-[300px]">
+                    <div className="flex flex-col gap-4 mt-8">
+                      <div className="flex items-center mb-4">
+                        <img src={logoImage} alt="North Karakoram" className="h-14 w-auto" />
+                      </div>
+
+                      <div className="relative">
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                        <Input
+                          type="search"
+                          placeholder="Search trips..."
+                          className="pl-10"
+                          data-testid="input-mobile-search"
+                        />
+                      </div>
+
+                      <nav className="flex flex-col gap-1">
+                        {mobileNavItems.map((item) => (
+                          <Link key={item.href} href={item.href} onClick={() => setMobileMenuOpen(false)}>
+                            <Button
+                              variant="ghost"
+                              className={`w-full justify-start font-medium ${location === item.href ? "bg-accent text-accent-foreground" : ""}`}
+                              data-testid={`link-mobile-nav-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
+                            >
+                              {item.label}
+                            </Button>
+                          </Link>
+                        ))}
+                      </nav>
+
+                      <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
+                        <Button className="w-full mt-4" data-testid="button-mobile-book-now">
+                          Book Now
                         </Button>
                       </Link>
-                    ))}
-                  </nav>
-
-                  <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                    <Button className="w-full mt-4" data-testid="button-mobile-book-now">
-                      Book Now
-                    </Button>
-                  </Link>
-                </div>
-              </SheetContent>
-            </Sheet>
+                    </div>
+                  </SheetContent>
+                </Sheet>
+              </div>
+            </div>
           </div>
         </div>
       </div>

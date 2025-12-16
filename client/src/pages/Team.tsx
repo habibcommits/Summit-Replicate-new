@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SiWhatsapp, SiYoutube, SiTiktok, SiInstagram, SiFacebook } from "react-icons/si";
 import trekkingImage from "@assets/stock_images/mountain_trekking_ex_3477c925.jpg";
@@ -15,18 +14,18 @@ const teamMembers = [
   {
     id: 1,
     name: "Muhammad Ali",
-    role: "Founder & CEO",
+    role: "Operation Manager",
     image: ceoImage,
-    expertise: ["Strategic Planning", "Expedition Leadership", "Business Development", "Mountain Tourism", "Team Building"],
-    description: "With over 15 years of mountaineering experience, Muhammad Ali founded North Karakoram with a vision to share the majestic beauty of Pakistan's peaks with adventurers worldwide. His deep knowledge of the Karakoram range and passion for sustainable tourism drives our company's mission."
+    expertise: ["Logistics Management", "Team Coordination", "Safety Protocols", "Route Planning", "Crisis Management"],
+    description: "Muhammad Ali ensures seamless operations across all expeditions and treks. His meticulous attention to detail and expertise in coordinating complex logistics guarantees that every adventure runs smoothly from start to finish."
   },
   {
     id: 2,
     name: "Mohsin Ali",
-    role: "Operation Manager",
+    role: "Founder & CEO",
     image: operationManagerImage,
-    expertise: ["Logistics Management", "Team Coordination", "Safety Protocols", "Route Planning", "Crisis Management"],
-    description: "Mohsin ensures seamless operations across all expeditions and treks. His meticulous attention to detail and expertise in coordinating complex logistics guarantees that every adventure runs smoothly from start to finish."
+    expertise: ["Strategic Planning", "Expedition Leadership", "Business Development", "Mountain Tourism", "Team Building"],
+    description: "With over 15 years of mountaineering experience, Mohsin Ali founded North Karakoram with a vision to share the majestic beauty of Pakistan's peaks with adventurers worldwide. His deep knowledge of the Karakoram range and passion for sustainable tourism drives our company's mission."
   },
   {
     id: 3,
@@ -67,8 +66,56 @@ const socialLinks = [
   { icon: SiTiktok, href: "https://www.tiktok.com/@northkarakoram?_r=1&_t=ZS-92DeQDrmQvi", label: "TikTok" },
   { icon: SiInstagram, href: "https://www.instagram.com/northkarakoram?igsh=MWlseHgycWNybWx2MA%3D%3D&utm_source=qr", label: "Instagram" },
   { icon: SiFacebook, href: "https://www.facebook.com/share/1CtcRSQ4Yw/?mibextid=wwXIfr", label: "Facebook" },
-  { icon: SiWhatsapp, href: "https://wa.me/923330228111", label: "WhatsApp" }
+  { icon: SiWhatsapp, href: "https://wa.me/923555718293", label: "WhatsApp" }
 ];
+
+function FlipCard({ member }: { member: typeof teamMembers[0] }) {
+  return (
+    <div className="group perspective-1000" data-testid={`card-team-member-${member.id}`}>
+      <div className="relative w-full h-[480px] transition-transform duration-700 transform-style-preserve-3d group-hover:rotate-y-180">
+        <div className="absolute inset-0 backface-hidden rounded-lg overflow-hidden bg-card border border-border">
+          <div className="relative aspect-square overflow-hidden bg-muted">
+            <img
+              src={member.image}
+              alt={member.name}
+              className="w-full h-full object-cover object-top"
+            />
+          </div>
+          <div className="p-6">
+            <h3 className="font-heading font-bold text-xl mb-1" data-testid={`text-member-name-${member.id}`}>
+              {member.name}
+            </h3>
+            <p className="text-primary font-medium" data-testid={`text-member-role-${member.id}`}>
+              {member.role}
+            </p>
+          </div>
+        </div>
+        
+        <div className="absolute inset-0 backface-hidden rotate-y-180 rounded-lg overflow-hidden bg-primary text-primary-foreground p-6 flex flex-col justify-center">
+          <h3 className="font-heading font-bold text-xl mb-2">
+            {member.name}
+          </h3>
+          <p className="text-primary-foreground/90 font-medium mb-4">
+            {member.role}
+          </p>
+          <p className="text-primary-foreground/80 text-sm mb-4 leading-relaxed">
+            {member.description}
+          </p>
+          <div>
+            <p className="text-xs uppercase tracking-wide mb-2 text-primary-foreground/70">Expertise</p>
+            <div className="flex flex-wrap gap-2">
+              {member.expertise.map((skill, index) => (
+                <Badge key={index} variant="secondary" className="text-xs bg-white/20 text-primary-foreground border-0">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Team() {
   return (
@@ -108,33 +155,7 @@ export default function Team() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {teamMembers.map((member) => (
-                <Card key={member.id} className="overflow-hidden hover-elevate" data-testid={`card-team-member-${member.id}`}>
-                  <div className="relative aspect-square overflow-hidden bg-muted">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover object-top"
-                    />
-                  </div>
-                  <CardContent className="p-6">
-                    <h3 className="font-heading font-bold text-xl mb-1" data-testid={`text-member-name-${member.id}`}>
-                      {member.name}
-                    </h3>
-                    <p className="text-primary font-medium mb-3" data-testid={`text-member-role-${member.id}`}>
-                      {member.role}
-                    </p>
-                    <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
-                      {member.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {member.expertise.map((skill, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
+                <FlipCard key={member.id} member={member} />
               ))}
             </div>
           </div>
@@ -164,7 +185,7 @@ export default function Team() {
             </div>
             <div className="mt-8">
               <a
-                href="https://wa.me/923330228111?text=I'm%20interested%20in%20your%20services.%20Can%20I%20get%20more%20information?"
+                href="https://wa.me/923555718293?text=I'm%20interested%20in%20your%20services.%20Can%20I%20get%20more%20information?"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-md font-medium hover-elevate"

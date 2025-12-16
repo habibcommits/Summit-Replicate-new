@@ -273,8 +273,8 @@ export function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground text-sm">+92 345 123 4567</p>
-                    <p className="text-muted-foreground text-sm">+92 345 987 6543</p>
+                    <p className="text-muted-foreground text-sm">+92 355 5718293</p>
+                    <p className="text-muted-foreground text-sm">+92 333 0228111</p>
                   </div>
                 </div>
               </CardContent>
@@ -288,8 +288,7 @@ export function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold mb-1">Email</h3>
-                    <p className="text-muted-foreground text-sm">info@summitkarakoram.com</p>
-                    <p className="text-muted-foreground text-sm">booking@summitkarakoram.com</p>
+                    <p className="text-muted-foreground text-sm">info@northkarakoram.com</p>
                   </div>
                 </div>
               </CardContent>
