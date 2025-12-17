@@ -160,14 +160,26 @@ export default function ExpeditionDetail() {
                 </div>
 
                 <Tabs defaultValue="timeline" className="w-full">
-                  <TabsList className="w-full grid grid-cols-3">
-                    <TabsTrigger value="timeline" data-testid="tab-timeline">
+                  <TabsList className="w-full h-auto p-0 bg-transparent border-b border-border grid grid-cols-3">
+                    <TabsTrigger 
+                      value="timeline" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium"
+                      data-testid="tab-timeline"
+                    >
                       Timeline
                     </TabsTrigger>
-                    <TabsTrigger value="services" data-testid="tab-services">
+                    <TabsTrigger 
+                      value="services" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium"
+                      data-testid="tab-services"
+                    >
                       Services
                     </TabsTrigger>
-                    <TabsTrigger value="requirements" data-testid="tab-requirements">
+                    <TabsTrigger 
+                      value="requirements" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium"
+                      data-testid="tab-requirements"
+                    >
                       Requirements
                     </TabsTrigger>
                   </TabsList>
