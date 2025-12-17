@@ -159,31 +159,109 @@ export default function ExpeditionDetail() {
                   </ul>
                 </div>
 
-                <Tabs defaultValue="timeline" className="w-full">
-                  <TabsList className="w-full h-auto p-0 bg-transparent border-b border-border grid grid-cols-3">
+                <Tabs defaultValue="details" className="w-full">
+                  <TabsList className="w-full h-auto p-0 bg-transparent border-b border-border grid grid-cols-5">
                     <TabsTrigger 
-                      value="timeline" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium"
-                      data-testid="tab-timeline"
+                      value="details" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      data-testid="tab-details"
                     >
-                      Timeline
+                      DETAILS
                     </TabsTrigger>
                     <TabsTrigger 
-                      value="services" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium"
-                      data-testid="tab-services"
+                      value="itinerary" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      data-testid="tab-itinerary"
                     >
-                      Services
+                      MAP & ITINERARY
                     </TabsTrigger>
                     <TabsTrigger 
-                      value="requirements" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium"
-                      data-testid="tab-requirements"
+                      value="prices" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      data-testid="tab-prices"
                     >
-                      Requirements
+                      DATES & PRICES
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="info" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      data-testid="tab-info"
+                    >
+                      HOLIDAY INFO
+                    </TabsTrigger>
+                    <TabsTrigger 
+                      value="photos" 
+                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      data-testid="tab-photos"
+                    >
+                      PHOTOS
                     </TabsTrigger>
                   </TabsList>
-                  <TabsContent value="timeline" className="mt-4">
+                  <TabsContent value="details" className="mt-4">
+                    <div className="space-y-4">
+                      <Card>
+                        <CardHeader className="pb-3">
+                          <CardTitle className="flex items-center gap-2 text-lg">
+                            <AlertTriangle className="w-5 h-5 text-secondary" />
+                            Climber Requirements
+                          </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-0">
+                          <ul className="space-y-2">
+                            {expedition.requirements.map((req, index) => (
+                              <li key={index} className="flex items-start gap-2">
+                                <ChevronRight className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+                                <span>{req}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </CardContent>
+                      </Card>
+                      <div className="grid md:grid-cols-2 gap-4">
+                        <Card>
+                          <CardHeader className="pb-3">
+                            <CardTitle className="flex items-center gap-2 text-lg">
+                              <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center">
+                                <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
+                              </div>
+                              Services Included
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent className="pt-0">
+                            <ul className="space-y-2">
+                              {expedition.servicesIncluded.map((service, index) => (
+                                <li key={index} className="flex items-start gap-2 text-sm">
+                                  <Check className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
+                                  <span>{service}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
+                        <Card>
+                          <CardHeader className="pb-3">
+                            <CardTitle className="flex items-center gap-2 text-lg">
+                              <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center">
+                                <X className="w-4 h-4 text-red-600 dark:text-red-400" />
+                              </div>
+                              Not Included
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent className="pt-0">
+                            <ul className="space-y-2">
+                              {expedition.servicesNotIncluded.map((service, index) => (
+                                <li key={index} className="flex items-start gap-2 text-sm">
+                                  <X className="w-4 h-4 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
+                                  <span>{service}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </CardContent>
+                        </Card>
+                      </div>
+                    </div>
+                  </TabsContent>
+                  <TabsContent value="itinerary" className="mt-4">
                     <div className="space-y-3">
                       {expedition.timeline.map((item, index) => (
                         <Card key={index}>
@@ -202,67 +280,81 @@ export default function ExpeditionDetail() {
                       ))}
                     </div>
                   </TabsContent>
-                  <TabsContent value="services" className="mt-4">
-                    <div className="grid md:grid-cols-2 gap-4">
-                      <Card>
-                        <CardHeader className="pb-3">
-                          <CardTitle className="flex items-center gap-2 text-lg">
-                            <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center">
-                              <Check className="w-4 h-4 text-green-600 dark:text-green-400" />
-                            </div>
-                            Services Included
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="pt-0">
-                          <ul className="space-y-2">
-                            {expedition.servicesIncluded.map((service, index) => (
-                              <li key={index} className="flex items-start gap-2 text-sm">
-                                <Check className="w-4 h-4 text-green-600 dark:text-green-400 flex-shrink-0 mt-0.5" />
-                                <span>{service}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardHeader className="pb-3">
-                          <CardTitle className="flex items-center gap-2 text-lg">
-                            <div className="w-6 h-6 rounded-full bg-red-500/10 flex items-center justify-center">
-                              <X className="w-4 h-4 text-red-600 dark:text-red-400" />
-                            </div>
-                            Not Included
-                          </CardTitle>
-                        </CardHeader>
-                        <CardContent className="pt-0">
-                          <ul className="space-y-2">
-                            {expedition.servicesNotIncluded.map((service, index) => (
-                              <li key={index} className="flex items-start gap-2 text-sm">
-                                <X className="w-4 h-4 text-red-600 dark:text-red-400 flex-shrink-0 mt-0.5" />
-                                <span>{service}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </TabsContent>
-                  <TabsContent value="requirements" className="mt-4">
+                  <TabsContent value="prices" className="mt-4">
                     <Card>
-                      <CardHeader className="pb-3">
-                        <CardTitle className="flex items-center gap-2 text-lg">
-                          <AlertTriangle className="w-5 h-5 text-secondary" />
-                          Climber Requirements
-                        </CardTitle>
-                      </CardHeader>
-                      <CardContent className="pt-0">
-                        <ul className="space-y-2">
-                          {expedition.requirements.map((req, index) => (
-                            <li key={index} className="flex items-start gap-2">
-                              <ChevronRight className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
-                              <span>{req}</span>
-                            </li>
-                          ))}
-                        </ul>
+                      <CardContent className="p-6">
+                        <div className="mb-6">
+                          <h3 className="font-heading font-bold text-xl mb-2">Expedition Pricing</h3>
+                          <div className="flex items-baseline gap-2">
+                            <span className="font-heading font-bold text-3xl text-primary">
+                              ${expedition.price.toLocaleString()}
+                            </span>
+                            <span className="text-muted-foreground">USD per person</span>
+                          </div>
+                        </div>
+                        <div className="space-y-3">
+                          <div className="flex items-center justify-between py-2 border-b border-border">
+                            <span className="text-muted-foreground">Duration</span>
+                            <span className="font-medium">{expedition.duration}</span>
+                          </div>
+                          <div className="flex items-center justify-between py-2 border-b border-border">
+                            <span className="text-muted-foreground">Best Season</span>
+                            <span className="font-medium">{expedition.bestSeason}</span>
+                          </div>
+                          <div className="flex items-center justify-between py-2 border-b border-border">
+                            <span className="text-muted-foreground">Group Size</span>
+                            <span className="font-medium">{expedition.groupSize}</span>
+                          </div>
+                        </div>
+                        <p className="text-muted-foreground text-sm mt-4">
+                          Custom dates available. Contact us for group discounts and special packages.
+                        </p>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="info" className="mt-4">
+                    <Card>
+                      <CardContent className="p-6">
+                        <h3 className="font-heading font-bold text-xl mb-4">Holiday Information</h3>
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="font-semibold mb-2">Location</h4>
+                            <p className="text-muted-foreground">{expedition.location}</p>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold mb-2">Difficulty Level</h4>
+                            <p className="text-muted-foreground">{expedition.difficulty}</p>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold mb-2">Best Time to Visit</h4>
+                            <p className="text-muted-foreground">{expedition.bestSeason}</p>
+                          </div>
+                          <div>
+                            <h4 className="font-semibold mb-2">About This Expedition</h4>
+                            <p className="text-muted-foreground">{expedition.description}</p>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </TabsContent>
+                  <TabsContent value="photos" className="mt-4">
+                    <Card>
+                      <CardContent className="p-6">
+                        <h3 className="font-heading font-bold text-xl mb-4">Photo Gallery</h3>
+                        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                          <div className="aspect-video rounded-md overflow-hidden">
+                            <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
+                          </div>
+                          <div className="aspect-video rounded-md overflow-hidden">
+                            <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
+                          </div>
+                          <div className="aspect-video rounded-md overflow-hidden">
+                            <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
+                          </div>
+                        </div>
+                        <p className="text-muted-foreground text-sm mt-4 text-center">
+                          More photos coming soon. Contact us for detailed expedition visuals.
+                        </p>
                       </CardContent>
                     </Card>
                   </TabsContent>
