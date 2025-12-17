@@ -251,7 +251,7 @@ export function Navigation() {
                 <ThemeToggle />
 
                 <Link href="/contact">
-                  <Button className="hidden sm:flex bg-white text-primary hover:bg-white/90" data-testid="button-book-now-header">
+                  <Button className="hidden sm:flex bg-secondary text-secondary-foreground" data-testid="button-book-now-header">
                     Book Now
                   </Button>
                 </Link>
