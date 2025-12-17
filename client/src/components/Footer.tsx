@@ -49,7 +49,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div>
             <Link href="/" className="flex items-center mb-4">
-              <img src={logoImage} alt="North Karakoram" className="h-16 w-auto" />
+              <img src={logoImage} alt="North Karakoram" className="h-24 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Licensed outfitter and guide to major mountaineering expeditions in the
