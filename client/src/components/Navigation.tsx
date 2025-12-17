@@ -104,7 +104,7 @@ export function Navigation() {
       <div className="flex">
         <div className="bg-white dark:bg-gray-900 flex items-center px-4 py-2">
           <Link href="/" className="flex items-center" data-testid="link-home-logo">
-            <img src={logoImage} alt="North Karakoram" className="h-16 w-auto" />
+            <img src={logoImage} alt="North Karakoram" className="h-24 w-auto" />
           </Link>
         </div>
         <div className="flex-1 bg-primary">
@@ -270,7 +270,7 @@ export function Navigation() {
                   <SheetContent side="right" className="w-[300px]">
                     <div className="flex flex-col gap-4 mt-8">
                       <div className="flex items-center mb-4">
-                        <img src={logoImage} alt="North Karakoram" className="h-14 w-auto" />
+                        <img src={logoImage} alt="North Karakoram" className="h-20 w-auto" />
                       </div>
 
                       <div className="relative">
