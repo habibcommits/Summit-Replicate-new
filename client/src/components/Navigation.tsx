@@ -119,7 +119,7 @@ export function Navigation() {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn("text-primary-foreground hover:text-primary-foreground hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/expeditions" && "bg-primary/80")} data-testid="link-nav-expeditions">
+                    <NavigationMenuTrigger className={cn("text-primary hover:text-primary hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/expeditions" && "bg-primary/80")} data-testid="link-nav-expeditions">
                       Expedition
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
