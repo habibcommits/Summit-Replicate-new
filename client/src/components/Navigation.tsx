@@ -25,6 +25,10 @@ import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import logoImage from "@assets/Untitled_design_1765623825631.png";
 
+interface NavigationProps {
+  onSearch?: (query: string) => void;
+}
+
 const expeditionItems = {
   "8000M Expedition": [
     { label: "K2 Expedition", href: "/expedition/k2-expedition" },
@@ -94,10 +98,23 @@ const mobileNavItems = [
   { label: "Contact", href: "/contact" },
 ];
 
-export function Navigation() {
-  const [location] = useLocation();
+export function Navigation({ onSearch }: NavigationProps = {}) {
+  const [location, setLocation] = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      if (onSearch) {
+        onSearch(searchQuery.trim());
+      }
+      setLocation(`/expeditions?search=${encodeURIComponent(searchQuery.trim())}`);
+      setSearchOpen(false);
+      setSearchQuery("");
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border">
@@ -217,25 +234,27 @@ export function Navigation() {
 
               <div className="flex items-center gap-2">
                 {searchOpen ? (
-                  <div className="relative hidden sm:flex items-center">
+                  <form onSubmit={handleSearch} className="relative hidden sm:flex items-center">
                     <Input
                       type="search"
                       placeholder="Search trips..."
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
                       className="w-48 pr-8 bg-white/20 text-primary-foreground placeholder:text-primary-foreground/70 border-primary-foreground/30"
                       data-testid="input-search"
                       autoFocus
-                      onBlur={() => setSearchOpen(false)}
                     />
                     <Button
                       size="icon"
                       variant="ghost"
+                      type="button"
                       className="absolute right-0 text-primary-foreground hover:bg-primary/80"
                       onClick={() => setSearchOpen(false)}
                       data-testid="button-close-search"
                     >
                       <X className="w-4 h-4" />
                     </Button>
-                  </div>
+                  </form>
                 ) : (
                   <Button
                     size="icon"

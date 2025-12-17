@@ -73,11 +73,18 @@ export function AboutSection() {
               </div>
             </div>
 
-            <Link href="/contact">
-              <Button size="lg" data-testid="button-about-contact">
-                Contact Us
-              </Button>
-            </Link>
+            <div className="flex flex-wrap gap-4">
+              <Link href="/team">
+                <Button size="lg" data-testid="button-about-learn-more">
+                  Learn More
+                </Button>
+              </Link>
+              <Link href="/contact">
+                <Button size="lg" variant="outline" data-testid="button-about-contact">
+                  Contact Us
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4">
