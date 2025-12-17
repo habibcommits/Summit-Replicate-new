@@ -20,7 +20,7 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { Menu, Search, X, Phone } from "lucide-react";
+import { Menu, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import logoImage from "@assets/Untitled_design_1765623825631.png";
@@ -101,21 +101,6 @@ export function Navigation() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border">
-      {/* Top bar with contact info */}
-      <div className="bg-secondary text-primary py-1.5 px-4">
-        <div className="container mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-6">
-            <a href="tel:+923330228111" className="flex items-center gap-2 text-sm font-medium hover:underline" data-testid="link-phone-primary">
-              <Phone className="w-4 h-4" />
-              <span>+92 333 0228111</span>
-            </a>
-            <a href="tel:+923555718293" className="hidden sm:flex items-center gap-2 text-sm text-primary/80 hover:underline" data-testid="link-phone-secondary">
-              <Phone className="w-3.5 h-3.5" />
-              <span>+92 355 5718293</span>
-            </a>
-          </div>
-        </div>
-      </div>
       <div className="flex">
         <div className="bg-white dark:bg-gray-900 flex items-center px-4 py-2">
           <Link href="/" className="flex items-center" data-testid="link-home-logo">

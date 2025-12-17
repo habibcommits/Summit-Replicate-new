@@ -273,8 +273,8 @@ export function ContactForm() {
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold mb-1">Phone</h3>
-                    <p className="text-muted-foreground text-sm">+92 355 5718293</p>
                     <p className="text-muted-foreground text-sm">+92 333 0228111</p>
+                    <p className="text-muted-foreground text-sm">+92 355 5718293</p>
                   </div>
                 </div>
               </CardContent>
