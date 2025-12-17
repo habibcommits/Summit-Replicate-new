@@ -160,38 +160,38 @@ export default function ExpeditionDetail() {
                 </div>
 
                 <Tabs defaultValue="details" className="w-full">
-                  <TabsList className="w-full h-auto p-0 bg-transparent border-b border-border grid grid-cols-5">
+                  <TabsList className="w-full h-auto p-0 bg-transparent border-b border-border flex flex-wrap sm:grid sm:grid-cols-5">
                     <TabsTrigger 
                       value="details" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
                       data-testid="tab-details"
                     >
                       DETAILS
                     </TabsTrigger>
                     <TabsTrigger 
                       value="itinerary" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
                       data-testid="tab-itinerary"
                     >
                       MAP & ITINERARY
                     </TabsTrigger>
                     <TabsTrigger 
                       value="prices" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
                       data-testid="tab-prices"
                     >
                       DATES & PRICES
                     </TabsTrigger>
                     <TabsTrigger 
                       value="info" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
                       data-testid="tab-info"
                     >
                       HOLIDAY INFO
                     </TabsTrigger>
                     <TabsTrigger 
                       value="photos" 
-                      className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-3 font-medium text-xs sm:text-sm"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
                       data-testid="tab-photos"
                     >
                       PHOTOS
