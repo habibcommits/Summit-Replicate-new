@@ -113,7 +113,7 @@ export function Navigation() {
               <NavigationMenu className="hidden lg:flex">
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/" && "bg-primary/80")} data-testid="link-nav-home">
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "text-primary hover:text-primary hover:bg-primary/80", location === "/" && "bg-primary/80")} data-testid="link-nav-home">
                       Home
                     </Link>
                   </NavigationMenuItem>
@@ -147,7 +147,7 @@ export function Navigation() {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn("text-primary-foreground hover:text-primary-foreground hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/trekking" && "bg-primary/80")} data-testid="link-nav-trekking">
+                    <NavigationMenuTrigger className={cn("text-primary hover:text-primary hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/trekking" && "bg-primary/80")} data-testid="link-nav-trekking">
                       Trekking
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -175,19 +175,19 @@ export function Navigation() {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <Link href="/tours" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/tours" && "bg-primary/80")} data-testid="link-nav-tours">
+                    <Link href="/tours" className={cn(navigationMenuTriggerStyle(), "text-primary hover:text-primary hover:bg-primary/80", location === "/tours" && "bg-primary/80")} data-testid="link-nav-tours">
                       Tour
                     </Link>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <Link href="/about" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-travel-info">
+                    <Link href="/about" className={cn(navigationMenuTriggerStyle(), "text-primary hover:text-primary hover:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-travel-info">
                       Travel Info
                     </Link>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn("text-primary-foreground hover:text-primary-foreground hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-about-us">
+                    <NavigationMenuTrigger className={cn("text-primary hover:text-primary hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-about-us">
                       About Us
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -208,7 +208,7 @@ export function Navigation() {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "text-primary-foreground hover:text-primary-foreground hover:bg-primary/80", location === "/contact" && "bg-primary/80")} data-testid="link-nav-contact">
+                    <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "text-primary hover:text-primary hover:bg-primary/80", location === "/contact" && "bg-primary/80")} data-testid="link-nav-contact">
                       Contact
                     </Link>
                   </NavigationMenuItem>
