@@ -174,8 +174,8 @@ export function Footer() {
               <li className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 <div>
-                  <span className="text-muted-foreground text-sm block">+92 355 5718293</span>
                   <span className="text-muted-foreground text-sm block">+92 333 0228111</span>
+                  <span className="text-muted-foreground text-sm block">+92 355 5718293</span>
                 </div>
               </li>
               <li className="flex items-center gap-3">
