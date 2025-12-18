@@ -119,7 +119,7 @@ export function Navigation({ onSearch }: NavigationProps = {}) {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border">
       <div className="flex">
-        <div className="bg-white dark:bg-gray-900 flex items-center px-4 h-[65px]">
+        <div className="bg-primary flex items-center px-4 h-[65px]">
           <Link href="/" className="flex items-center" data-testid="link-home-logo">
             <img src={logoImage} alt="North Karakoram" className="h-14 w-auto" />
           </Link>

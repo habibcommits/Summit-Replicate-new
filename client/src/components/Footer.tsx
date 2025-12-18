@@ -48,9 +48,11 @@ export function Footer() {
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           <div>
-            <Link href="/" className="flex items-center mb-4">
-              <img src={logoImage} alt="North Karakoram" className="h-24 w-auto" />
-            </Link>
+            <div className="bg-primary rounded-md p-3 inline-flex mb-4">
+              <Link href="/" className="flex items-center" data-testid="link-footer-logo">
+                <img src={logoImage} alt="North Karakoram" className="h-24 w-auto" />
+              </Link>
+            </div>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Licensed outfitter and guide to major mountaineering expeditions in the
               Karakoram & Himalaya Range since 1998.
