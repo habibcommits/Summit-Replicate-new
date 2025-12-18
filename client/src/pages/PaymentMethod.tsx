@@ -2,7 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Smartphone, Banknote, MessageCircle, Users } from "lucide-react";
+import { Smartphone, Banknote, MessageCircle, Users, CheckCircle } from "lucide-react";
 import paymentHeaderImage from "@assets/stock_images/mountain_expedition__228548ef.jpg";
 
 export default function PaymentMethod() {
@@ -39,6 +39,18 @@ export default function PaymentMethod() {
               <p className="text-muted-foreground mb-6">
                 You can deposit money from any bank or through mobile payment services. Choose the method that works best for you. After making the payment, send a screenshot through WhatsApp along with the names and CNIC numbers of all group members.
               </p>
+              <Card className="p-6 bg-primary/5 border-primary/20 mb-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm font-semibold text-muted-foreground mb-1">Payment Currency</p>
+                    <p className="font-medium text-lg">PKR (Pakistani Rupees)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-muted-foreground mb-1">Advance Required</p>
+                    <p className="font-medium text-lg">50% Per Person</p>
+                  </div>
+                </div>
+              </Card>
             </div>
 
             {/* Bank Transfer */}
@@ -165,6 +177,54 @@ export default function PaymentMethod() {
               </Card>
             </div>
 
+            {/* Security & Privacy */}
+            <div className="mb-12">
+              <h2 className="font-heading font-bold text-3xl mb-6">Security & Privacy</h2>
+              <Card className="p-8 bg-muted/30">
+                <ul className="space-y-3">
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">All payment information is kept strictly confidential</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Secure bank transfers through verified financial institutions</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Direct payment to authorized company accounts only</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                    <span className="text-muted-foreground">Payment receipt issued for all transactions</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+
+            {/* FAQs */}
+            <div className="mb-12">
+              <h2 className="font-heading font-bold text-3xl mb-6">Frequently Asked Questions</h2>
+              <div className="space-y-4">
+                <Card className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">What happens after I pay 50% advance?</h3>
+                  <p className="text-muted-foreground text-sm">Your booking is confirmed after we receive your payment and member details. We will send you a confirmation email with your booking reference and itinerary details.</p>
+                </Card>
+                <Card className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">When is the remaining 50% payment due?</h3>
+                  <p className="text-muted-foreground text-sm">The remaining balance must be paid 2 weeks before your expedition or trek start date. We will send you a payment reminder 3 weeks before your departure.</p>
+                </Card>
+                <Card className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Can I pay via international transfer?</h3>
+                  <p className="text-muted-foreground text-sm">Yes, international bank transfers are accepted. Please contact us directly for international banking details and to ensure a smooth transfer process.</p>
+                </Card>
+                <Card className="p-6">
+                  <h3 className="font-semibold text-lg mb-2">Is there a cancellation refund policy?</h3>
+                  <p className="text-muted-foreground text-sm">Cancellations made 30+ days before departure receive 80% refund. Cancellations 15-29 days before receive 50% refund. Cancellations within 14 days are non-refundable.</p>
+                </Card>
+              </div>
+            </div>
+
             {/* Contact for Confirmation */}
             <div className="bg-primary/10 border border-primary/20 rounded-lg p-8 text-center">
               <p className="text-muted-foreground mb-4">
@@ -173,6 +233,7 @@ export default function PaymentMethod() {
               <div className="space-y-2">
                 <p className="font-heading font-bold text-2xl">+92 355 4175752</p>
                 <p className="text-muted-foreground">WhatsApp: Available 24/7</p>
+                <p className="text-muted-foreground text-sm mt-3 mb-6">Email: info@northkarakoram.com</p>
                 <Button className="mt-6" data-testid="button-contact-whatsapp">
                   Contact Us on WhatsApp
                 </Button>
