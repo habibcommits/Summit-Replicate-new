@@ -244,16 +244,6 @@ export default function TripDetail() {
               <div>
                 <Card className="sticky top-20">
                   <CardContent className="p-6">
-                    <div className="mb-6">
-                      <p className="text-muted-foreground text-sm mb-1">Price per person</p>
-                      <div className="flex items-baseline gap-2">
-                        <span className="font-heading font-bold text-4xl text-primary">
-                          ${trip.price.toLocaleString()}
-                        </span>
-                        <span className="text-muted-foreground">USD</span>
-                      </div>
-                    </div>
-
                     <div className="space-y-3 mb-6">
                       <div className="flex items-center justify-between py-2 border-b border-border">
                         <span className="text-muted-foreground">Duration</span>
