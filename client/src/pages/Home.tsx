@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { AboutSection } from "@/components/AboutSection";
 import { HolidayCategories } from "@/components/HolidayCategories";
+import { SeasonWiseSection } from "@/components/SeasonWiseSection";
 import { TrekkingSection } from "@/components/TrekkingSection";
 import { ExpeditionsSection } from "@/components/ExpeditionsSection";
 import { ClientReviews } from "@/components/ClientReviews";
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <AboutSection />
         <HolidayCategories />
+        <SeasonWiseSection />
         <TrekkingSection />
         <ExpeditionsSection />
         <ClientReviews />
