@@ -27,7 +27,7 @@ const quickLinks = [
 
 const usefulLinks = [
   { label: "Pakistan Visa", href: "/pakistan-visa", external: false },
-  { label: "Payment Method", href: "/contact", external: false },
+  { label: "Payment Method", href: "/payment-method", external: false },
   { label: "Contact Us", href: "/contact", external: false },
 ];
 
