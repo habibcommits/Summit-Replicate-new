@@ -342,19 +342,31 @@ export default function ExpeditionDetail() {
                       <CardContent className="p-6">
                         <h3 className="font-heading font-bold text-xl mb-4">Photo Gallery</h3>
                         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                          <div className="aspect-video rounded-md overflow-hidden">
-                            <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
-                          </div>
-                          <div className="aspect-video rounded-md overflow-hidden">
-                            <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
-                          </div>
-                          <div className="aspect-video rounded-md overflow-hidden">
-                            <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
-                          </div>
+                          {expedition.gallery && expedition.gallery.length > 0 ? (
+                            expedition.gallery.map((photo, idx) => (
+                              <div key={idx} className="aspect-video rounded-md overflow-hidden">
+                                <img src={photo} alt={`${expedition.name} - Photo ${idx + 1}`} className="w-full h-full object-cover" data-testid={`img-gallery-${idx}`} />
+                              </div>
+                            ))
+                          ) : (
+                            <>
+                              <div className="aspect-video rounded-md overflow-hidden">
+                                <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
+                              </div>
+                              <div className="aspect-video rounded-md overflow-hidden">
+                                <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
+                              </div>
+                              <div className="aspect-video rounded-md overflow-hidden">
+                                <img src={expedition.image} alt={expedition.name} className="w-full h-full object-cover" />
+                              </div>
+                            </>
+                          )}
                         </div>
-                        <p className="text-muted-foreground text-sm mt-4 text-center">
-                          More photos coming soon. Contact us for detailed expedition visuals.
-                        </p>
+                        {(!expedition.gallery || expedition.gallery.length === 0) && (
+                          <p className="text-muted-foreground text-sm mt-4 text-center">
+                            More photos coming soon. Contact us for detailed expedition visuals.
+                          </p>
+                        )}
                       </CardContent>
                     </Card>
                   </TabsContent>
