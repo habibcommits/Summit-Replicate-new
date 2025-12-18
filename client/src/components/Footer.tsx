@@ -26,9 +26,9 @@ const quickLinks = [
 ];
 
 const usefulLinks = [
-  { label: "Pakistan Visa", href: "https://visa.nadra.gov.pk/", external: true },
-  { label: "Payment Method", href: "/contact" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Pakistan Visa", href: "/pakistan-visa", external: false },
+  { label: "Payment Method", href: "/contact", external: false },
+  { label: "Contact Us", href: "/contact", external: false },
 ];
 
 const destinations = [
