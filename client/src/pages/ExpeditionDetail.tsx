@@ -441,12 +441,7 @@ export default function ExpeditionDetail() {
                       <CardContent className="p-4">
                         <h3 className="font-heading font-semibold mb-1">{exp.name}</h3>
                         <p className="text-muted-foreground text-sm mb-2">{exp.location}</p>
-                        <div className="flex items-center justify-between">
-                          <span className="text-sm text-muted-foreground">{exp.duration}</span>
-                          <span className="font-heading font-bold text-primary">
-                            ${exp.price.toLocaleString()}
-                          </span>
-                        </div>
+                        <div className="text-sm text-muted-foreground">{exp.duration}</div>
                       </CardContent>
                     </Card>
                   </Link>
