@@ -1,39 +1,46 @@
 import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
-import { Compass, Mountain, Flag, Footprints } from "lucide-react";
+import { useState } from "react";
+import tourIcon from "@assets/tour_1766088463289.png";
+import climbingIcon from "@assets/climbing_(2)_1766088463287.png";
+import expeditionIcon from "@assets/expiditon_1766088463288.png";
+import trekkingIcon from "@assets/treking_1766088463289.png";
 
 const categories = [
   {
     title: "Tours",
     description: "Explore scenic routes and cultural experiences",
-    icon: Compass,
+    icon: tourIcon,
     href: "/tours",
-    color: "bg-blue-500/10 text-blue-600 dark:text-blue-400",
   },
   {
     title: "Climbing",
     description: "Technical mountaineering adventures",
-    icon: Mountain,
+    icon: climbingIcon,
     href: "/expeditions",
-    color: "bg-orange-500/10 text-orange-600 dark:text-orange-400",
   },
   {
     title: "Expeditions",
     description: "Summit the world's highest peaks",
-    icon: Flag,
+    icon: expeditionIcon,
     href: "/expeditions",
-    color: "bg-green-500/10 text-green-600 dark:text-green-400",
   },
   {
     title: "Trekking",
     description: "Trek through pristine mountain trails",
-    icon: Footprints,
+    icon: trekkingIcon,
     href: "/trekking",
-    color: "bg-purple-500/10 text-purple-600 dark:text-purple-400",
   },
 ];
 
 export function HolidayCategories() {
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
+  const handleCardClick = (e: React.MouseEvent, title: string) => {
+    e.preventDefault();
+    setActiveCard(activeCard === title ? null : title);
+  };
+
   return (
     <section className="py-16 bg-background" data-testid="section-holiday-categories">
       <div className="container mx-auto px-4">
@@ -45,20 +52,54 @@ export function HolidayCategories() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {categories.map((category) => (
-            <Link key={category.title} href={category.href}>
-              <Card 
-                className="p-6 text-center hover-elevate cursor-pointer group h-full"
-                data-testid={`card-category-${category.title.toLowerCase()}`}
-              >
-                <div className={`w-16 h-16 rounded-full ${category.color} mx-auto mb-4 flex items-center justify-center transition-transform group-hover:scale-110`}>
-                  <category.icon className="w-8 h-8" />
-                </div>
-                <h3 className="font-heading font-semibold text-xl mb-2">{category.title}</h3>
-                <p className="text-muted-foreground text-sm">{category.description}</p>
-              </Card>
-            </Link>
-          ))}
+          {categories.map((category) => {
+            const isActive = activeCard === category.title;
+
+            return (
+              <Link key={category.title} href={category.href}>
+                <Card 
+                  className="p-6 text-center cursor-pointer group h-full bg-green-50 dark:bg-green-950/20 hover-elevate transition-all"
+                  data-testid={`card-category-${category.title.toLowerCase()}`}
+                  onClick={(e) => handleCardClick(e as any, category.title)}
+                  onMouseEnter={() => setActiveCard(category.title)}
+                  onMouseLeave={() => setActiveCard(null)}
+                >
+                  <div className="relative h-40 flex items-center justify-center">
+                    {/* Icon container - visible on hover/click */}
+                    <div
+                      className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+                        isActive
+                          ? "opacity-100"
+                          : "opacity-0 md:group-hover:opacity-100"
+                      }`}
+                    >
+                      <img
+                        src={category.icon}
+                        alt={category.title}
+                        className="w-24 h-24 object-contain"
+                      />
+                    </div>
+
+                    {/* Text container - hidden on hover/click */}
+                    <div
+                      className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 ${
+                        isActive
+                          ? "opacity-0"
+                          : "opacity-100"
+                      }`}
+                    >
+                      <h3 className="font-heading font-semibold text-lg mb-1 text-green-800 dark:text-green-100">
+                        {category.title}
+                      </h3>
+                      <p className="text-green-600 dark:text-green-200 text-xs">
+                        {category.description}
+                      </p>
+                    </div>
+                  </div>
+                </Card>
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>
