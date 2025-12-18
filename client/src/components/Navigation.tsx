@@ -126,7 +126,7 @@ export function Navigation({ onSearch }: NavigationProps = {}) {
         </div>
         <div className="flex-1 bg-primary">
           <div className="container mx-auto px-4">
-            <div className="flex h-16 items-center justify-between gap-4">
+            <div className="flex h-[45px] items-center justify-between gap-4">
               <NavigationMenu className="hidden lg:flex">
                 <NavigationMenuList>
                   <NavigationMenuItem>
