@@ -55,7 +55,7 @@ export function Footer() {
             </div>
             <p className="text-muted-foreground text-sm mb-4 leading-relaxed">
               Licensed outfitter and guide to major mountaineering expeditions in the
-              Karakoram & Himalaya Range since 1998.
+              Karakoram & Himalaya Range.
             </p>
             <div className="flex gap-3 flex-wrap">
               <a
