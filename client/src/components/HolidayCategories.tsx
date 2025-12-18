@@ -7,28 +7,34 @@ import trekkingIcon from "@assets/4_1766088732500.png";
 
 const categories = [
   {
-    title: "Tours",
-    description: "Explore scenic routes and cultural experiences",
-    icon: tourIcon,
-    href: "/tours",
-  },
-  {
-    title: "Climbing",
-    description: "Technical mountaineering adventures",
-    icon: climbingIcon,
-    href: "/expeditions",
-  },
-  {
-    title: "Expeditions",
-    description: "Summit the world's highest peaks",
+    title: "LAILA PEAK EXPEDITION",
+    description: "6k and below",
     icon: expeditionIcon,
-    href: "/expeditions",
+    href: "/expeditions/laila-peak",
   },
   {
-    title: "Trekking",
-    description: "Trek through pristine mountain trails",
-    icon: trekkingIcon,
-    href: "/trekking",
+    title: "PASTORE PEAK EXPEDITION",
+    description: "6k and below",
+    icon: expeditionIcon,
+    href: "/expeditions/pastore-peak",
+  },
+  {
+    title: "KHUSROGANG EXPEDITION",
+    description: "6k and below",
+    icon: expeditionIcon,
+    href: "/expeditions/khusrogang",
+  },
+  {
+    title: "GONDOGORO PEAK EXPEDITION",
+    description: "6k and below",
+    icon: expeditionIcon,
+    href: "/expeditions/gondogoro-peak",
+  },
+  {
+    title: "TRANGO TOWER",
+    description: "ROCK CLIMBING",
+    icon: climbingIcon,
+    href: "/climbing/trango-tower",
   },
 ];
 
