@@ -52,21 +52,21 @@ export function HolidayCategories() {
                   style={{ backgroundColor: "#0d7678" }}
                   data-testid={`card-category-${category.title.toLowerCase()}`}
                 >
-                  <div className="relative h-40 flex items-center justify-center">
-                    {/* Icon container - visible on hover */}
+                  <div className="relative h-48 flex items-center justify-center">
+                    {/* Icon container - visible by default, hidden on hover */}
                     <div
-                      className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                      className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                     >
                       <img
                         src={category.icon}
                         alt={category.title}
-                        className="w-24 h-24 object-contain"
+                        className="w-full h-full object-contain"
                       />
                     </div>
 
-                    {/* Text container - hidden on hover */}
+                    {/* Text container - hidden by default, visible on hover */}
                     <div
-                      className="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0"
+                      className="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                     >
                       <h3 className="font-heading font-semibold text-lg mb-2 text-white">
                         {category.title}
