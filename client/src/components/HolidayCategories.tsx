@@ -1,10 +1,9 @@
 import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
-import { useState } from "react";
-import tourIcon from "@assets/tour_1766088463289.png";
-import climbingIcon from "@assets/climbing_(2)_1766088463287.png";
-import expeditionIcon from "@assets/expiditon_1766088463288.png";
-import trekkingIcon from "@assets/treking_1766088463289.png";
+import tourIcon from "@assets/1_1766088732498.png";
+import climbingIcon from "@assets/2_1766088732499.png";
+import expeditionIcon from "@assets/3_1766088732500.png";
+import trekkingIcon from "@assets/4_1766088732500.png";
 
 const categories = [
   {
@@ -34,13 +33,6 @@ const categories = [
 ];
 
 export function HolidayCategories() {
-  const [activeCard, setActiveCard] = useState<string | null>(null);
-
-  const handleCardClick = (e: React.MouseEvent, title: string) => {
-    e.preventDefault();
-    setActiveCard(activeCard === title ? null : title);
-  };
-
   return (
     <section className="py-16 bg-background" data-testid="section-holiday-categories">
       <div className="container mx-auto px-4">
@@ -53,25 +45,17 @@ export function HolidayCategories() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category) => {
-            const isActive = activeCard === category.title;
-
             return (
               <Link key={category.title} href={category.href}>
                 <Card 
-                  className="p-6 text-center cursor-pointer group h-full bg-green-50 dark:bg-green-950/20 hover-elevate transition-all"
+                  className="p-6 text-center cursor-pointer group h-full transition-all hover-elevate"
+                  style={{ backgroundColor: "#0d7678" }}
                   data-testid={`card-category-${category.title.toLowerCase()}`}
-                  onClick={(e) => handleCardClick(e as any, category.title)}
-                  onMouseEnter={() => setActiveCard(category.title)}
-                  onMouseLeave={() => setActiveCard(null)}
                 >
                   <div className="relative h-40 flex items-center justify-center">
-                    {/* Icon container - visible on hover/click */}
+                    {/* Icon container - visible on hover */}
                     <div
-                      className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-                        isActive
-                          ? "opacity-100"
-                          : "opacity-0 md:group-hover:opacity-100"
-                      }`}
+                      className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-0 group-hover:opacity-100"
                     >
                       <img
                         src={category.icon}
@@ -80,18 +64,14 @@ export function HolidayCategories() {
                       />
                     </div>
 
-                    {/* Text container - hidden on hover/click */}
+                    {/* Text container - hidden on hover */}
                     <div
-                      className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 ${
-                        isActive
-                          ? "opacity-0"
-                          : "opacity-100"
-                      }`}
+                      className="absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0"
                     >
-                      <h3 className="font-heading font-semibold text-lg mb-1 text-green-800 dark:text-green-100">
+                      <h3 className="font-heading font-semibold text-lg mb-2 text-white">
                         {category.title}
                       </h3>
-                      <p className="text-green-600 dark:text-green-200 text-xs">
+                      <p className="text-white/80 text-sm">
                         {category.description}
                       </p>
                     </div>
