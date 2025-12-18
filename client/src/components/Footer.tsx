@@ -14,7 +14,7 @@
 import { Link } from "wouter";
 import { Mail, Phone, MapPin, ExternalLink } from "lucide-react";
 import { SiWhatsapp, SiYoutube, SiTiktok, SiInstagram, SiFacebook } from "react-icons/si";
-import logoImage from "@assets/Untitled_design_1765623825631.png";
+import logoImage from "@assets/white_logo_(2)_1766041006047.png";
 
 const quickLinks = [
   { label: "Home", href: "/" },
