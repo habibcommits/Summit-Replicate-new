@@ -14,23 +14,23 @@ const teamMembers = [
   {
     id: 1,
     name: "Muhammad Ali",
-    role: "Operation Manager",
+    role: "CEO and Founder",
     image: ceoImage,
-    expertise: ["Logistics Management", "Team Coordination", "Safety Protocols", "Route Planning", "Crisis Management"],
-    description: "Muhammad Ali ensures seamless operations across all expeditions and treks. His meticulous attention to detail and expertise in coordinating complex logistics guarantees that every adventure runs smoothly from start to finish."
+    expertise: ["Strategic Planning", "Expedition Leadership", "Business Development", "Mountain Tourism", "Team Building"],
+    description: "With over 15 years of mountaineering experience, Muhammad Ali founded North Karakoram with a vision to share the majestic beauty of Pakistan's peaks with adventurers worldwide. His deep knowledge of the Karakoram range and passion for sustainable tourism drives our company's mission."
   },
   {
     id: 2,
     name: "Mohsin Ali",
-    role: "Founder & CEO",
+    role: "Operation Manager",
     image: operationManagerImage,
-    expertise: ["Strategic Planning", "Expedition Leadership", "Business Development", "Mountain Tourism", "Team Building"],
-    description: "With over 15 years of mountaineering experience, Mohsin Ali founded North Karakoram with a vision to share the majestic beauty of Pakistan's peaks with adventurers worldwide. His deep knowledge of the Karakoram range and passion for sustainable tourism drives our company's mission."
+    expertise: ["Logistics Management", "Team Coordination", "Safety Protocols", "Route Planning", "Crisis Management"],
+    description: "Mohsin Ali ensures seamless operations across all expeditions and treks. His meticulous attention to detail and expertise in coordinating complex logistics guarantees that every adventure runs smoothly from start to finish."
   },
   {
     id: 3,
     name: "Ibrahim Khalil",
-    role: "Operation Manager & Tour Consultant",
+    role: "Operation Manager and Tour Consultant",
     image: tourConsultantImage,
     expertise: ["Tour Planning", "Client Relations", "Custom Itineraries", "Customer Service", "Travel Consulting"],
     description: "Ibrahim combines operational excellence with personalized tour consulting. He works closely with clients to design bespoke adventures that match their skill levels, preferences, and dreams of conquering Pakistan's legendary peaks."
@@ -38,7 +38,7 @@ const teamMembers = [
   {
     id: 4,
     name: "Ghulam Abbas",
-    role: "Logistics Specialist",
+    role: "Logistic Specialist",
     image: logisticsImage,
     expertise: ["Equipment Management", "Supply Chain", "Base Camp Operations", "Inventory Control", "Vendor Relations"],
     description: "Ghulam is the backbone of our expedition logistics. His expertise in managing equipment, supplies, and base camp operations ensures that every expedition is properly equipped and supported throughout the journey."
@@ -54,7 +54,7 @@ const teamMembers = [
   {
     id: 6,
     name: "Murtaza Ali",
-    role: "Field Manager & Tour Guide",
+    role: "Field Manager and Tour Guide",
     image: tourGuideImage,
     expertise: ["High Altitude Trekking", "Cultural Interpretation", "Client Safety", "Mountain Navigation", "First Aid"],
     description: "Murtaza brings energy and expertise to every expedition. His passion for the mountains and ability to connect with diverse groups makes him an invaluable guide for both challenging climbs and cultural explorations."
