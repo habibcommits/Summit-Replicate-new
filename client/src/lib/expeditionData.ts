@@ -3,6 +3,8 @@ import expeditionImage2 from "@assets/stock_images/mountain_expedition__b33a227e
 import expeditionImage3 from "@assets/stock_images/mountain_expedition__494acab3.jpg";
 import heroImage1 from "@assets/stock_images/majestic_mountain_pe_743f6593.jpg";
 import heroImage2 from "@assets/stock_images/majestic_mountain_pe_34e27685.jpg";
+import nangaParbatImage1 from "@assets/nanga_parbat_1_1766090260999.png";
+import nangaParbatImage2 from "@assets/nanga_perbat_2_1766090261000.png";
 
 export interface ExpeditionTimeline {
   day: string;
@@ -22,6 +24,7 @@ export interface ExpeditionData {
   price: number;
   groupSize: string;
   image: string;
+  gallery?: string[];
   description: string;
   overview: string;
   timeline: ExpeditionTimeline[];
@@ -108,7 +111,8 @@ export const expeditions: ExpeditionData[] = [
     bestSeason: "June - August",
     price: 35000,
     groupSize: "6-10 climbers",
-    image: expeditionImage2,
+    image: nangaParbatImage1,
+    gallery: [nangaParbatImage1, nangaParbatImage2, nangaParbatImage1],
     description: "Nanga Parbat, the 'Killer Mountain,' rises 8,126 meters in the western Himalayas. It features the world's largest mountain face - the Rupal Face - rising 4,600m from base to summit.",
     overview: "The Nanga Parbat Expedition offers a challenging climb on one of the world's most dramatic peaks. Known for its massive size and unpredictable weather, Nanga Parbat requires excellent mountaineering skills. We offer routes via the Diamir Face (normal route) or the more challenging Rupal Face for experienced climbers.",
     timeline: [
