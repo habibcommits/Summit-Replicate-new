@@ -33,7 +33,9 @@ export function WelcomePopup() {
       <DialogContent className="sm:max-w-md" data-testid="welcome-popup">
         <DialogHeader className="text-center">
           <div className="flex justify-center mb-4">
-            <img src={logoImage} alt="North Karakoram" className="h-20 w-auto" />
+            <div className="bg-primary rounded-md p-2">
+              <img src={logoImage} alt="North Karakoram" className="h-20 w-auto" />
+            </div>
           </div>
           <DialogTitle className="text-2xl font-heading text-center">
             Welcome to North Karakoram
