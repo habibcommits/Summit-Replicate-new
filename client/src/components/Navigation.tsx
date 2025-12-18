@@ -126,17 +126,17 @@ export function Navigation({ onSearch }: NavigationProps = {}) {
         </div>
         <div className="flex-1 bg-primary">
           <div className="container mx-auto px-4">
-            <div className="flex h-20 items-center justify-between gap-4">
+            <div className="flex h-16 items-center justify-between gap-4">
               <NavigationMenu className="hidden lg:flex">
                 <NavigationMenuList>
                   <NavigationMenuItem>
-                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80", location === "/" && "bg-primary/80")} data-testid="link-nav-home">
+                    <Link href="/" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80 text-base font-bold", location === "/" && "bg-primary/80")} data-testid="link-nav-home">
                       Home
                     </Link>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn("bg-primary text-white hover:text-white hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/expeditions" && "bg-primary/80")} data-testid="link-nav-expeditions">
+                    <NavigationMenuTrigger className={cn("bg-primary text-white hover:text-white hover:bg-primary/80 data-[state=open]:bg-primary/80 text-base font-bold", location === "/expeditions" && "bg-primary/80")} data-testid="link-nav-expeditions">
                       Expedition
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -164,7 +164,7 @@ export function Navigation({ onSearch }: NavigationProps = {}) {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn("bg-primary text-white hover:text-white hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/trekking" && "bg-primary/80")} data-testid="link-nav-trekking">
+                    <NavigationMenuTrigger className={cn("bg-primary text-white hover:text-white hover:bg-primary/80 data-[state=open]:bg-primary/80 text-base font-bold", location === "/trekking" && "bg-primary/80")} data-testid="link-nav-trekking">
                       Trekking
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -192,19 +192,19 @@ export function Navigation({ onSearch }: NavigationProps = {}) {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <Link href="/tours" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80", location === "/tours" && "bg-primary/80")} data-testid="link-nav-tours">
+                    <Link href="/tours" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80 text-base font-bold", location === "/tours" && "bg-primary/80")} data-testid="link-nav-tours">
                       Tour
                     </Link>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <Link href="/about" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-travel-info">
+                    <Link href="/about" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80 text-base font-bold", location === "/about" && "bg-primary/80")} data-testid="link-nav-travel-info">
                       Travel Info
                     </Link>
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <NavigationMenuTrigger className={cn("bg-primary text-white hover:text-white hover:bg-primary/80 data-[state=open]:bg-primary/80", location === "/about" && "bg-primary/80")} data-testid="link-nav-about-us">
+                    <NavigationMenuTrigger className={cn("bg-primary text-white hover:text-white hover:bg-primary/80 data-[state=open]:bg-primary/80 text-base font-bold", location === "/about" && "bg-primary/80")} data-testid="link-nav-about-us">
                       About Us
                     </NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -225,7 +225,7 @@ export function Navigation({ onSearch }: NavigationProps = {}) {
                   </NavigationMenuItem>
 
                   <NavigationMenuItem>
-                    <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80", location === "/contact" && "bg-primary/80")} data-testid="link-nav-contact">
+                    <Link href="/contact" className={cn(navigationMenuTriggerStyle(), "bg-primary text-white hover:text-white hover:bg-primary/80 text-base font-bold", location === "/contact" && "bg-primary/80")} data-testid="link-nav-contact">
                       Contact
                     </Link>
                   </NavigationMenuItem>
