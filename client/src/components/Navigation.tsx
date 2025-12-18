@@ -23,7 +23,7 @@ import {
 import { Menu, Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import logoImage from "@assets/white_logo_(2)_1766041006047.png";
+import logoImage from "@assets/white_logo_(3)_1766041182585.png";
 
 interface NavigationProps {
   onSearch?: (query: string) => void;
