@@ -72,15 +72,31 @@ const reviews = [
 
 export function ClientReviews() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerView = 4;
+  const itemsPerView = 1;
   const totalItems = reviews.length;
+  
+  // Create infinite loop array
+  const infiniteReviews = [...reviews, ...reviews, ...reviews];
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % totalItems);
+      setCurrentIndex((prev) => {
+        const next = prev + 1;
+        return next;
+      });
     }, 4000);
     return () => clearInterval(interval);
-  }, [totalItems]);
+  }, []);
+
+  // Reset position when reaching end of loop (seamless reset)
+  useEffect(() => {
+    if (currentIndex >= totalItems * 2) {
+      const timeout = setTimeout(() => {
+        setCurrentIndex(0);
+      }, 0);
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, totalItems]);
 
   return (
     <section className="py-16 bg-muted/30" data-testid="section-reviews">
@@ -99,17 +115,17 @@ export function ClientReviews() {
           <div 
             className="flex gap-6 transition-transform duration-700 ease-in-out"
             style={{
-              transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 24}px))`,
+              transform: `translateX(calc(-${(currentIndex % (totalItems * 3)) * 100}% - ${(currentIndex % (totalItems * 3)) * 24}px))`,
             }}
           >
-            {[...reviews, ...reviews].map((review, index) => (
+            {infiniteReviews.map((review, index) => (
               <div 
                 key={index} 
                 className="flex-shrink-0 w-full md:w-1/2 lg:w-1/4"
               >
                 <Card 
                   className="p-6 h-full"
-                  data-testid={`card-review-${review.id}`}
+                  data-testid={`card-review-${review.id}-${index}`}
                 >
                   <div className="flex items-center gap-3 mb-4">
                     <Avatar>
@@ -142,7 +158,7 @@ export function ClientReviews() {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-2 h-2 rounded-full transition-all ${
-                index === currentIndex ? "bg-primary w-8" : "bg-muted"
+                index === (currentIndex % totalItems) ? "bg-primary w-8" : "bg-muted"
               }`}
               aria-label={`Go to review ${index + 1}`}
               data-testid={`button-review-dot-${index}`}
