@@ -1,4 +1,4 @@
-import { SiFacebook, SiInstagram, SiYoutube, SiTiktok, SiWhatsapp, SiX } from "react-icons/si";
+import { SiFacebook, SiInstagram, SiYoutube, SiTiktok, SiWhatsapp } from "react-icons/si";
 
 const socialLinks = [
   {
@@ -30,12 +30,6 @@ const socialLinks = [
     icon: SiWhatsapp,
     href: "https://wa.me/923555718293",
     color: "bg-green-600 hover:bg-green-700",
-  },
-  {
-    name: "X",
-    icon: SiX,
-    href: "#",
-    color: "bg-black hover:bg-gray-800 dark:bg-white dark:text-black dark:hover:bg-gray-200",
   },
 ];
 
