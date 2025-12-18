@@ -25,6 +25,7 @@ import About from "@/pages/About";
 import Team from "@/pages/Team";
 import Contact from "@/pages/Contact";
 import TripDetail from "@/pages/TripDetail";
+import PakistanVisa from "@/pages/PakistanVisa";
 import NotFound from "@/pages/not-found";
 
 /**
@@ -45,6 +46,7 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/team" component={Team} />
       <Route path="/contact" component={Contact} />
+      <Route path="/pakistan-visa" component={PakistanVisa} />
       {/* Dynamic trip detail page with ID parameter */}
       <Route path="/trip/:id" component={TripDetail} />
       {/* 404 fallback for unmatched routes */}
