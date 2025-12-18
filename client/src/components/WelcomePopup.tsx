@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Mountain, MapPin, Phone } from "lucide-react";
-import logoImage from "@assets/white_logo_(2)_1766041006047.png";
+import logoImage from "@assets/white_logo_(3)_1766041182585.png";
 
 export function WelcomePopup() {
   const [open, setOpen] = useState(false);
