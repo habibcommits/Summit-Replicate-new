@@ -163,35 +163,35 @@ export default function ExpeditionDetail() {
                   <TabsList className="w-full h-auto p-0 bg-transparent border-b border-border flex flex-wrap sm:grid sm:grid-cols-5">
                     <TabsTrigger 
                       value="details" 
-                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-bold text-sm sm:text-base whitespace-normal text-center leading-tight"
                       data-testid="tab-details"
                     >
                       DETAILS
                     </TabsTrigger>
                     <TabsTrigger 
                       value="itinerary" 
-                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-bold text-sm sm:text-base whitespace-normal text-center leading-tight"
                       data-testid="tab-itinerary"
                     >
                       MAP & ITINERARY
                     </TabsTrigger>
                     <TabsTrigger 
                       value="prices" 
-                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-bold text-sm sm:text-base whitespace-normal text-center leading-tight"
                       data-testid="tab-prices"
                     >
                       DATES & PRICES
                     </TabsTrigger>
                     <TabsTrigger 
                       value="info" 
-                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-bold text-sm sm:text-base whitespace-normal text-center leading-tight"
                       data-testid="tab-info"
                     >
                       HOLIDAY INFO
                     </TabsTrigger>
                     <TabsTrigger 
                       value="photos" 
-                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-medium text-[10px] sm:text-xs whitespace-normal text-center leading-tight"
+                      className="flex-1 sm:flex-none rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground py-2 px-2 font-bold text-sm sm:text-base whitespace-normal text-center leading-tight"
                       data-testid="tab-photos"
                     >
                       PHOTOS
