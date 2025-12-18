@@ -7,7 +7,7 @@ import baseCampImage from "@assets/stock_images/mountain_base_camp_t_930df7d7.jp
 import heroImage from "@assets/stock_images/majestic_mountain_pe_37c42122.jpg";
 
 const features = [
-  "Licensed by Pakistan Department of Tourist Services (#1152)",
+  "Licensed by Pakistan Department of Tourist Services (#2640)",
   "Successful expeditions to K2, Nanga Parbat, and all 8000m peaks",
   "Professional, experienced mountain guides",
   "Complete trekking and expedition support",
