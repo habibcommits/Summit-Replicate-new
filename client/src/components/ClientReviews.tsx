@@ -78,17 +78,9 @@ export function ClientReviews() {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % totalItems);
-    }, 5000);
+    }, 4000);
     return () => clearInterval(interval);
   }, [totalItems]);
-
-  const getVisibleReviews = () => {
-    const visibleReviews = [];
-    for (let i = 0; i < itemsPerView; i++) {
-      visibleReviews.push(reviews[(currentIndex + i) % totalItems]);
-    }
-    return visibleReviews;
-  };
 
   return (
     <section className="py-16 bg-muted/30" data-testid="section-reviews">
@@ -105,16 +97,15 @@ export function ClientReviews() {
 
         <div className="overflow-hidden">
           <div 
-            className="flex gap-6 transition-transform duration-500 ease-in-out"
+            className="flex gap-6 transition-transform duration-700 ease-in-out"
             style={{
-              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+              transform: `translateX(calc(-${currentIndex * 100}% - ${currentIndex * 24}px))`,
             }}
           >
-            {reviews.map((review) => (
+            {[...reviews, ...reviews].map((review, index) => (
               <div 
-                key={review.id} 
-                className="flex-shrink-0"
-                style={{ width: `${100 / itemsPerView}%` }}
+                key={index} 
+                className="flex-shrink-0 w-full md:w-1/2 lg:w-1/4"
               >
                 <Card 
                   className="p-6 h-full"
