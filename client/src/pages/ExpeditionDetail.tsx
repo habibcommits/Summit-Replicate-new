@@ -376,16 +376,6 @@ export default function ExpeditionDetail() {
               <div>
                 <Card className="sticky top-20">
                   <CardContent className="p-5">
-                    <div className="mb-5">
-                      <p className="text-muted-foreground text-sm mb-1">Starting from</p>
-                      <div className="flex items-baseline gap-2">
-                        <span className="font-heading font-bold text-3xl text-primary">
-                          ${expedition.price.toLocaleString()}
-                        </span>
-                        <span className="text-muted-foreground">USD</span>
-                      </div>
-                    </div>
-
                     <div className="space-y-2 mb-5">
                       <div className="flex items-center justify-between py-2 border-b border-border">
                         <span className="text-muted-foreground text-sm">Duration</span>
