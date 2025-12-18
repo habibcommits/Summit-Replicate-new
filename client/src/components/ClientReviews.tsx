@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const reviews = [
   {
@@ -35,9 +36,60 @@ const reviews = [
     text: "The Fairy Meadows trek exceeded all expectations. The views of Nanga Parbat were breathtaking. Thank you for an amazing adventure!",
     initials: "YT",
   },
+  {
+    id: 5,
+    name: "Emma Williams",
+    country: "Australia",
+    rating: 5,
+    text: "An absolutely world-class experience! The team's expertise and attention to detail made our Hunza Valley trek the highlight of our lives.",
+    initials: "EW",
+  },
+  {
+    id: 6,
+    name: "Diego Rodriguez",
+    country: "Spain",
+    rating: 5,
+    text: "Exceeded expectations in every way. The mountain guides are experienced professionals and the camps were comfortable despite the altitude.",
+    initials: "DR",
+  },
+  {
+    id: 7,
+    name: "Isabella Rossi",
+    country: "Italy",
+    rating: 5,
+    text: "A life-changing adventure! The combination of stunning landscapes and expert guidance created an unforgettable experience.",
+    initials: "IR",
+  },
+  {
+    id: 8,
+    name: "James Wilson",
+    country: "Canada",
+    rating: 5,
+    text: "Incredible service from start to finish. The team managed logistics flawlessly and kept us safe throughout the expedition.",
+    initials: "JW",
+  },
 ];
 
 export function ClientReviews() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerView = 4;
+  const totalItems = reviews.length;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % totalItems);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [totalItems]);
+
+  const getVisibleReviews = () => {
+    const visibleReviews = [];
+    for (let i = 0; i < itemsPerView; i++) {
+      visibleReviews.push(reviews[(currentIndex + i) % totalItems]);
+    }
+    return visibleReviews;
+  };
+
   return (
     <section className="py-16 bg-muted/30" data-testid="section-reviews">
       <div className="container mx-auto px-4">
@@ -51,33 +103,59 @@ export function ClientReviews() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {reviews.map((review) => (
-            <Card 
-              key={review.id} 
-              className="p-6"
-              data-testid={`card-review-${review.id}`}
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <Avatar>
-                  <AvatarFallback className="bg-primary text-primary-foreground">
-                    {review.initials}
-                  </AvatarFallback>
-                </Avatar>
-                <div>
-                  <p className="font-medium">{review.name}</p>
-                  <p className="text-sm text-muted-foreground">{review.country}</p>
-                </div>
+        <div className="overflow-hidden">
+          <div 
+            className="flex gap-6 transition-transform duration-500 ease-in-out"
+            style={{
+              transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
+            }}
+          >
+            {reviews.map((review) => (
+              <div 
+                key={review.id} 
+                className="flex-shrink-0"
+                style={{ width: `${100 / itemsPerView}%` }}
+              >
+                <Card 
+                  className="p-6 h-full"
+                  data-testid={`card-review-${review.id}`}
+                >
+                  <div className="flex items-center gap-3 mb-4">
+                    <Avatar>
+                      <AvatarFallback className="bg-primary text-primary-foreground">
+                        {review.initials}
+                      </AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <p className="font-medium">{review.name}</p>
+                      <p className="text-sm text-muted-foreground">{review.country}</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
+                    ))}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    "{review.text}"
+                  </p>
+                </Card>
               </div>
-              <div className="flex gap-1 mb-3">
-                {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-yellow-500 text-yellow-500" />
-                ))}
-              </div>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                "{review.text}"
-              </p>
-            </Card>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex justify-center gap-2 mt-8">
+          {reviews.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentIndex(index)}
+              className={`w-2 h-2 rounded-full transition-all ${
+                index === currentIndex ? "bg-primary w-8" : "bg-muted"
+              }`}
+              aria-label={`Go to review ${index + 1}`}
+              data-testid={`button-review-dot-${index}`}
+            />
           ))}
         </div>
       </div>
