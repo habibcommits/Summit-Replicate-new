@@ -283,32 +283,17 @@ export default function ExpeditionDetail() {
                   <TabsContent value="prices" className="mt-4">
                     <Card>
                       <CardContent className="p-6">
-                        <div className="mb-6">
-                          <h3 className="font-heading font-bold text-xl mb-2">Expedition Pricing</h3>
-                          <div className="flex items-baseline gap-2">
-                            <span className="font-heading font-bold text-3xl text-primary">
-                              ${expedition.price.toLocaleString()}
-                            </span>
-                            <span className="text-muted-foreground">USD per person</span>
-                          </div>
+                        <div className="text-center py-8">
+                          <h3 className="font-heading font-bold text-xl mb-4">Pricing Information</h3>
+                          <p className="text-muted-foreground mb-6">
+                            For detailed pricing information and customized packages, please contact us directly.
+                          </p>
+                          <Link href="/contact">
+                            <Button data-testid="button-contact-pricing">
+                              Get Pricing Information
+                            </Button>
+                          </Link>
                         </div>
-                        <div className="space-y-3">
-                          <div className="flex items-center justify-between py-2 border-b border-border">
-                            <span className="text-muted-foreground">Duration</span>
-                            <span className="font-medium">{expedition.duration}</span>
-                          </div>
-                          <div className="flex items-center justify-between py-2 border-b border-border">
-                            <span className="text-muted-foreground">Best Season</span>
-                            <span className="font-medium">{expedition.bestSeason}</span>
-                          </div>
-                          <div className="flex items-center justify-between py-2 border-b border-border">
-                            <span className="text-muted-foreground">Group Size</span>
-                            <span className="font-medium">{expedition.groupSize}</span>
-                          </div>
-                        </div>
-                        <p className="text-muted-foreground text-sm mt-4">
-                          Custom dates available. Contact us for group discounts and special packages.
-                        </p>
                       </CardContent>
                     </Card>
                   </TabsContent>
