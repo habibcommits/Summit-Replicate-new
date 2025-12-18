@@ -13,19 +13,19 @@ import tourGuideImage from "@assets/Murtaza_Ali_Field_Manager_&_tour_guide_17657
 const teamMembers = [
   {
     id: 1,
-    name: "Muhammad Ali",
+    name: "Mohsin Ali",
     role: "CEO and Founder",
-    image: ceoImage,
+    image: operationManagerImage,
     expertise: ["Strategic Planning", "Expedition Leadership", "Business Development", "Mountain Tourism", "Team Building"],
-    description: "With over 15 years of mountaineering experience, Muhammad Ali founded North Karakoram with a vision to share the majestic beauty of Pakistan's peaks with adventurers worldwide. His deep knowledge of the Karakoram range and passion for sustainable tourism drives our company's mission."
+    description: "With over 15 years of mountaineering experience, Mohsin Ali founded North Karakoram with a vision to share the majestic beauty of Pakistan's peaks with adventurers worldwide. His deep knowledge of the Karakoram range and passion for sustainable tourism drives our company's mission."
   },
   {
     id: 2,
-    name: "Mohsin Ali",
+    name: "Muhammad Ali",
     role: "Operation Manager",
-    image: operationManagerImage,
+    image: ceoImage,
     expertise: ["Logistics Management", "Team Coordination", "Safety Protocols", "Route Planning", "Crisis Management"],
-    description: "Mohsin Ali ensures seamless operations across all expeditions and treks. His meticulous attention to detail and expertise in coordinating complex logistics guarantees that every adventure runs smoothly from start to finish."
+    description: "Muhammad Ali ensures seamless operations across all expeditions and treks. His meticulous attention to detail and expertise in coordinating complex logistics guarantees that every adventure runs smoothly from start to finish."
   },
   {
     id: 3,
