@@ -53,8 +53,8 @@ export function AboutSection() {
               <div className="flex items-center gap-3 bg-card border border-card-border rounded-md px-4 py-3">
                 <Mountain className="w-8 h-8 text-primary" />
                 <div>
-                  <p className="font-heading font-bold text-2xl">25+</p>
-                  <p className="text-muted-foreground text-sm">Years Experience</p>
+                  <p className="font-heading font-bold text-2xl">20+</p>
+                  <p className="text-muted-foreground text-sm">Destinations Covered</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 bg-card border border-card-border rounded-md px-4 py-3">
@@ -67,8 +67,8 @@ export function AboutSection() {
               <div className="flex items-center gap-3 bg-card border border-card-border rounded-md px-4 py-3">
                 <Users className="w-8 h-8 text-primary" />
                 <div>
-                  <p className="font-heading font-bold text-2xl">2000+</p>
-                  <p className="text-muted-foreground text-sm">Happy Clients</p>
+                  <p className="font-heading font-bold text-2xl">30+</p>
+                  <p className="text-muted-foreground text-sm">Expert Team Members</p>
                 </div>
               </div>
             </div>
